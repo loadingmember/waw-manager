@@ -7,8 +7,8 @@ parser = argparse.ArgumentParser(description='World at War Mod Manager 1.0')
 parser.add_argument('-v','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.0')
 parser.add_argument('-i','--install', help='Install new map', action='store', dest='map_name', required=False)
 parser.add_argument('-m', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
-parser.add_argument('-s', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
 parser.add_argument('-u','--uninstall', help='Uninstall map', action='store', dest='uninstall_map_name', required=False)
+parser.add_argument('-s', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
 parser.add_argument('-l', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store', dest='list', required=False)
 
 args = parser.parse_args()
@@ -44,6 +44,7 @@ elif(args.mod_name == 'waw_modtools'):
     print 'Installing WeaponsEditor++. Completed'
     print 'WaW Mod Tools Successfuly Installed'
 
+## Map Installs Below
 
 if(args.map_name == 'zombie_cargo'):
    print 'map_name = Zombie Cargo'
@@ -91,7 +92,26 @@ elif(args.map_name == 'cryogenic'):
     print 'Setting Blood Rain'
     print 'Cryogenic Installed Successfuly'
 
+## Map Uninstalls
 
+if(args.uninstall_map_name == 'zombie_cargo'):
+    print 'Removing Files/Scripts'
+    print 'Zombie Cargo Map Uninstalled with No Errors'
+elif(args.uninstall_map_name == 'zombie_slums'):
+    print 'Removing Files/Scripts'
+    print 'Zombie Slums Map Uninstaled with No Errors'
+elif(args.uninstall_map_name == 'tmg_christmas1.1'):
+    print 'Removing Files/Scripts'
+    print 'TMG Christmas Map Uninstalled with No Errors'
+elif(args.uninstall_map_name == 'purple_dimension'):
+    print 'Removing Files/Scripts'
+    print 'Purple Dimension Map Uninstalled with No Errors'
+elif(args.uninstall_map_name == 'survivedabox'):
+    print 'Removing Files/Scripts'
+    print 'survivedabox Map Uninstalled with No Errors'
+elif(args.uninstall_map_name == 'cryogenic'):
+    print 'Removing Files/Scripts'
+    print 'Cryogenic Map Uninstalled with No Errors'
 
 
 
