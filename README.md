@@ -8,3 +8,18 @@ What about that pesky UGX mod and all the copy and pasting now just type "./waw-
 and UGX Mod and the latest version is installed.
 
 WARNING: This is NOT the FULL VERSION. Don't excpect most of this if not any of this to work.
+
+
+Map List (For Now):
+Zombie Cargo (Co-Op Fixed)
+Zombie Slums
+TMG Christmas 1.1
+Purple Dimesion
+survivedabox
+(more being added)
+
+Mod List:
+UGX Mod 1.0.4 (UGX Mod 1.1 When Released)
+WaW Mod Tools
+
+WaW Mod Manager Version 1.0
