@@ -5,6 +5,7 @@
 *.dll
 *.o
 *.so
+*.pyc
 
 # Logs and other artifacts
 most-recent-test-result.json
