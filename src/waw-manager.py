@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import argparse
+import subprocess
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.0')
 
@@ -50,6 +51,7 @@ if(args.map_name == 'zombie_cargo'):
    print 'map_name = Zombie Cargo'
    print 'homepage = http://www.ugx-mods.com'
    print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=5645.0'
+   subprocess.call(["c://Desktop/Zombie\ Cargo.exe"])
    print 'Installing Files'
    print 'Creating Images'
    print 'Zombie Cargo Installed Successfuly'
@@ -57,6 +59,7 @@ elif(args.map_name == 'zombie_slums'):
     print 'mapname = Zombie Slums'
     print 'homepage = http://www.zombiemodding.com'
     print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661'
+    subprocess.call(["c://Desktop/nazi_zombie_slums.exe"])
     print 'Installing Files'
     print 'Creating Images'
     print 'Zombie Slums Installed Successfuly'
@@ -64,6 +67,7 @@ elif(args.map_name == 'tmg_christmas1.1'):
     print 'mapname = TMG Christmas 1.1'
     print 'homepage = http://www.zommods.com'
     print 'map_homepage = http://zommods.com/tmg-christmas/'
+    subprocess.call(["c://Desktop/TMG_Christmas1.1.exe"])
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Weather'
@@ -72,6 +76,7 @@ elif(args.map_name == 'purple_dimension'):
     print 'mapname = Purple Dimension'
     print 'homepage = http://www.zombiemodding.com'
     print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771'
+    subprocess.call(["C://Desktop/PurpleDimension.exe"])
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Weather'
@@ -80,6 +85,7 @@ elif(args.map_name == 'survivedabox'):
     print 'mapname = survivedabox'
     print 'homepage = http://www.zombiemodding.com'
     print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819'
+    subprocess.call(["C://Desktop/PurpleDimension.exe"])
     print 'Installing Files'
     print 'Creating Images'
     print 'survivedabox Installed Successfuly'
@@ -87,6 +93,7 @@ elif(args.map_name == 'cryogenic'):
     print 'mapname = Cryogenic'
     print 'homepage = http://www.ugx-mods.com'
     print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=5860.0'
+    subprocess.call(["C://Desktop/Cryogenic.exe"])
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Blood Rain'
