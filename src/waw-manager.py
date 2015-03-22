@@ -8,9 +8,23 @@ parser.add_argument('-v','--version', help='Print Version', action='version', ve
 parser.add_argument('-i','--install', help='Install new map', action='store', dest='map_name', required=False)
 parser.add_argument('-m', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
 parser.add_argument('-s', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
-parser.add_argument('-u','--uninstall', help='Uninstall map', action='store', dest='map_name', required=False)
+parser.add_argument('-u','--uninstall', help='Uninstall map', action='store', dest='uninstall_map_name', required=False)
+parser.add_argument('-l', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store', dest='list', required=False)
 
 args = parser.parse_args()
+
+if(args.list == 'list'):
+    print 'Maps:'
+    print 'Zombie Cargo'
+    print 'Zombie Slums'
+    print 'TMG Christmas 1.1'
+    print 'Purple Dimension'
+    print 'survivedabox'
+    print 'Cryogenic'
+    print ''
+    print 'Mods:'
+    print 'WaW Mod Tools'
+    print 'UGX Mod 1.0.4'
 
 if(args.status == 'status'):
     print 'WaW Online Services: Running'
@@ -68,6 +82,16 @@ elif(args.map_name == 'survivedabox'):
     print 'Installing Files'
     print 'Creating Images'
     print 'survivedabox Installed Successfuly'
+elif(args.map_name == 'cryogenic'):
+    print 'mapname = Cryogenic'
+    print 'homepage = http://www.ugx-mods.com'
+    print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=5860.0'
+    print 'Installing Files'
+    print 'Creating Images'
+    print 'Setting Blood Rain'
+    print 'Cryogenic Installed Successfuly'
+
+
 
 
 
