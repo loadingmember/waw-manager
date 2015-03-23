@@ -45,3 +45,13 @@ WaW Mod Manager 1.2 - Third Update
 - Bug Fixes
 
 - Better Code Orginazation
+
+WaW Mod Manager 1.3 - Fourth Update
+
+- New Mod: Scaretime's scripts and prefabs
+
+- New Command: "-rmmod [mod_name]". Removes a mod.
+
+- Bug Fixes
+
+- Better Code Orginazation

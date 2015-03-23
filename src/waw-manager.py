@@ -4,9 +4,9 @@ import argparse
 import subprocess
 import time
 
-parser = argparse.ArgumentParser(description='World at War Mod Manager 1.1')
+parser = argparse.ArgumentParser(description='World at War Mod Manager 1.3')
 
-parser.add_argument('-version','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.1')
+parser.add_argument('-version','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.3')
 parser.add_argument('-installmap','--install', help='Install new map', action='store', dest='map_name', required=False)
 parser.add_argument('-installmod', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
 parser.add_argument('-rmmap','--uninstall', help='Uninstall map', action='store', dest='remove_map_name', required=False)
@@ -39,7 +39,7 @@ if(args.list == 'list'):
 
 if(args.status == 'status'):
     print 'WaW Online Services: Running'
-    print 'WaW Mod Manager 1.2: Running'
+    print 'WaW Mod Manager 1.3: Running'
     print "www.zombiemodding.com: Running"
     print "www.ugx-mods.com: Running"
     print "www.zommods.com: Running"
