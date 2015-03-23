@@ -10,6 +10,7 @@ parser.add_argument('-version','--version', help='Print Version', action='versio
 parser.add_argument('-installmap','--install', help='Install new map', action='store', dest='map_name', required=False)
 parser.add_argument('-installmod', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
 parser.add_argument('-rmmap','--uninstall', help='Uninstall map', action='store', dest='remove_map_name', required=False)
+parser.add_argument('-rmmod', '--uninstallmod', help='Uninstall mod', action='store', dest='remove_mod_name', required=False)
 parser.add_argument('-status', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
 parser.add_argument('-list', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store', dest='list', required=False)
 
@@ -34,6 +35,7 @@ if(args.list == 'list'):
     print 'ugx_mod_1_0_4'
     print 'black_ops_perks'
     print 'black_ops_weapons'
+    print 'scaretimes_scripts'
 
 if(args.status == 'status'):
     print 'WaW Online Services: Running'
@@ -76,12 +78,21 @@ elif(args.mod_name == 'black_ops_perks'):
     time.sleep(2)
     print 'Black Ops Perks Successfuly Installed'
 elif(args.mod_name == 'black_ops_weapons'):
-    print 'Black Ops Weapons'
+    print 'mod_name = Black Ops Weapons'
     print 'Copying Files to root directory'
     print 'Copying Files'
     raw_input("PRESS ENTER TO CONTINUE:")
     time.sleep(2)
     print 'Black Ops Weapons Successfuly Installed'
+elif(args.mod_name == 'scaretimes_scripts'):
+    print 'mod_name = Scaretimes Scripts and Prefabs'
+    print 'Copying Files to root directory'
+    print 'Copying Scripts'
+    print 'Copying Prefabs'
+    print 'WARNING: It is not our fault if you do not backup your root directory'
+    raw_input("PRESS ENTER TO CONTINUE:")
+    time.sleep(4)
+    print 'Scaretimes Scripts and Prefabs Successfuly Installed'
 
 ## Map Installs Below
 
@@ -244,36 +255,74 @@ elif(args.map_name == 'cheese_cube_unlimited'):
     time.sleep (3)
     print 'Cheese Cube Unlimited Installed Successfuly'
 
-## Map Removes
+## Cheese Cube Standard
+
+elif(args.map_name == 'cheese_cube'):
+    homepage = 'http://www.zombiemodding.com/'
+    map_homepage = 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390'
+    mapname = 'Cheese Cube'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
+    # subprocess.call([C:\\Desktop\Cheese/ Cube/ V1/ by/ ZK.exe])
+    time.sleep(2)
+    print 'Installing Files/Scripts'
+    time.sleep(2)
+    print 'Creating Images'
+    print time.sleep(1)
+    print 'Cheese Cube Installed Successfuly'
+
+## Map Removes ################################################################################################
 
 if(args.remove_map_name == 'zombie_cargo'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'Zombie Cargo Map Uninstalled with No Errors'
+
+## Zombie Slums Uninstall
+
 elif(args.remove_map_name == 'zombie_slums'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'Zombie Slums Map Uninstaled with No Errors'
+
+## TMG Christmas 1.1 Uninstall
+
 elif(args.remove_map_name == 'tmg_christmas1.1'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'TMG Christmas Map Uninstalled with No Errors'
+
+## Purple Dimension Uninstall
+
 elif(args.remove_map_name == 'purple_dimension'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'Purple Dimension Map Uninstalled with No Errors'
+
+## survivedabox uninstall
+
 elif(args.remove_map_name == 'survivedabox'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'survivedabox Map Uninstalled with No Errors'
+
+## Cryogenic Unistall
+
 elif(args.remove_map_name == 'cryogenic'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'Cryogenic Map Uninstalled with No Errors'
+
+## One Window Challange Uninstall
+
 elif(args.remove_map_name == 'one_window_challange'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'One Window Challange Uninstalled with No Errors'
+
+## Project Viking 1.0.2 Beta Uninstall
+
 elif(args.remove_map_name == 'project_viking1.0.2_beta'):
     print 'Removing Files/Scripts'
     time.sleep(2)
@@ -282,6 +331,9 @@ elif(args.remove_map_name == 'project_viking1.0.2_beta'):
     print 'Removing from Root'
     time.sleep(4)
     print 'Project Viking Beta 1.0.2 Uninstalled with No Errors'
+
+## KFC Uninstall
+
 elif(args.remove_map_name == 'kfc'):
     print 'Removing Files/Scripts'
     time.sleep(2)
@@ -290,7 +342,10 @@ elif(args.remove_map_name == 'kfc'):
     print 'Removing from Root'
     time.sleep(4)
     print 'KFC Uninstalled with No Errors'
-elif(args.remove_map_name) == 'cheese_cube_unlimited':
+
+## Cheese Cube Unlimited Uninstall
+
+elif(args.remove_map_name == 'cheese_cube_unlimited'):
     print 'Removing Files/Scripts'
     time.sleep(2)
     print 'Removing from Mods Folder'
@@ -298,6 +353,47 @@ elif(args.remove_map_name) == 'cheese_cube_unlimited':
     print 'Removing from Root'
     time.sleep(4)
     print 'Cheese Cube Unlimited Uninstalled with No Errors'
+
+## Cheese Cube Uninstall
+
+elif(args.remove_map_name == 'cheese_cube'):
+    print 'Removing Files/Scripts'
+    time.sleep(2)
+    print 'Removing from Mods Folder'
+    time.sleep(2)
+    print 'Removing from Root'
+    time.sleep(4)
+    print 'Cheese Cube Uninstalled with No Errors'
+
+if(args.remove_mod_name == 'ugx_mod_1_0_4'):
+    print 'Removing Files/Scripts'
+    time.sleep(3)
+    print 'Removing all .gsc files'
+    time.sleep(2)
+    raw_input('ARE YOU SURE YOU WANT TO CONTINUE THE UNINSTALATION? PRESS ENTER TO CONTINUE:')
+    print 'Removing Prefabs'
+    time.sleep(2)
+    print 'UGX Mod 1.0.4 Removed'
+elif(args.remove_mod_name == 'waw_modtools'):
+    print 'Sorry. These mod development tools are unreversable. You will have to find another way to uninstall'
+elif(args.remove_mod_name == 'black_ops_perks'):
+    print 'Removing Files/Scripts'
+    time.sleep(3)
+    print 'Removing all .gsc files'
+    time.sleep(2)
+    raw_input('ARE YOU SURE YOU WANT TO CONTINUE WITH THE UNINSTALATION? PRESS ENTER TO CONTINUE:')
+    print 'Removing Prefabs'
+    time.sleep(2)
+    print 'Black Ops Perk Mod Removed'
+elif(args.remove_mod_name == 'black_ops_weapons'):
+    print 'Removing Files/Scripts'
+    time.sleep(3)
+    print 'Removing all .gsc files'
+    time.sleep(2)
+    raw_input('ARE YOU SURE YOU WANT TO CONTINUE WITH THE UNINSTALATION? PRESS ENTER TO CONTINUE:')
+    print 'Removing Prefabs'
+    time.sleep(2)
+    print 'Black Ops Weapons Mod Removed'
 
 
 
