@@ -4,7 +4,7 @@ import argparse
 import subprocess
 import time
 
-parser = argparse.ArgumentParser(description='World at War Mod Manager 1.0')
+parser = argparse.ArgumentParser(description='World at War Mod Manager 1.1')
 
 parser.add_argument('-version','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.1')
 parser.add_argument('-installmap','--install', help='Install new map', action='store', dest='map_name', required=False)
@@ -13,29 +13,32 @@ parser.add_argument('-rmmap','--uninstall', help='Uninstall map', action='store'
 parser.add_argument('-status', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
 parser.add_argument('-list', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store', dest='list', required=False)
 
-user_map_name = ''
 args = parser.parse_args()
+
 
 if(args.list == 'list'):
     print 'Maps:'
-    print 'Zombie Cargo'
-    print 'Zombie Slums'
-    print 'TMG Christmas 1.1'
-    print 'Purple Dimension'
+    print 'zombie_cargo'
+    print 'zombie_slums'
+    print 'tmg_christmas1.1'
+    print 'purple_dimension'
     print 'survivedabox'
-    print 'Cryogenic'
-    print 'Project Viking Beta 1.0.2'
+    print 'cryogenic'
+    print 'project_viking1.0.2_beta'
+    print 'kfc'
     print ''
     print 'Mods:'
-    print 'WaW Mod Tools'
-    print 'UGX Mod 1.0.4'
-    print 'Black Ops Perks Mod'
+    print 'waw_modtools'
+    print 'ugx_mod_1_0_4'
+    print 'black_ops_perks'
+    print 'black_ops_weapons'
 
 if(args.status == 'status'):
     print 'WaW Online Services: Running'
-    print 'WaW Mod Manager 1.0: Running'
+    print 'WaW Mod Manager 1.2: Running'
     print "www.zombiemodding.com: Running"
     print "www.ugx-mods.com: Running"
+    print "www.zommods.com: Running"
 
 if(args.mod_name == 'ugx_mod_1_0_4'):
     print 'mod_name = UGX Mod 1.0.4'
@@ -59,91 +62,185 @@ elif(args.mod_name == 'waw_modtools'):
     time.sleep(2)
     print 'Installing WeaponsEditor++. Completed'
     time.sleep(2)
+    print 'Installing Map Manager. Completed'
+    time.sleep(2)
     print 'WaW Mod Tools Successfuly Installed'
 elif(args.mod_name == 'black_ops_perks'):
     print 'mod_name = Black Ops Perks'
     print 'Copying files to root directory'
     print 'Copying Prefabs'
+    print 'WARNING: It is not our fault if you do not back up your root'
+    raw_input("PRESS ENTER TO CONTINUE:")
     time.sleep(2)
     print 'Black Ops Perks Successfuly Installed'
+elif(args.mod_name == 'black_ops_weapons'):
+    print 'Black Ops Weapons'
+    print 'Copying Files to root directory'
+    print 'Copying Files'
+    raw_input("PRESS ENTER TO CONTINUE:")
+    time.sleep(2)
+    print 'Black Ops Weapons Successfuly Installed'
 
 ## Map Installs Below
 
+
+## Zombie Cargo
+
 if(args.map_name == 'zombie_cargo'):
-   print 'map_name = Zombie Cargo'
-   print 'homepage = http://www.ugx-mods.com'
-   print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=5645.0'
+   mapname = 'Zombie Cargo'
+   homepage = 'http://www.ugx-mods.com'
+   map_homepage = 'http://ugx-mods.com/forum/index.php?topic=5645.0'
+   print 'mapname = ' + mapname
+   print 'homepage = ' + homepage
+   print 'map_homepage = ' + map_homepage
    ## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
    time.sleep(2)
    print 'Installing Files'
    print 'Creating Images'
    print 'Zombie Cargo Installed Successfuly'
+
+## Zombie Slums
+
 elif(args.map_name == 'zombie_slums'):
-    print 'mapname = Zombie Slums'
-    print 'homepage = http://www.zombiemodding.com'
-    print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661'
+    mapname = 'Zombie Slums'
+    homepage = 'http://www.zombiemodding.com'
+    map_homepage = 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C:\\Desktop\nazie_zombie_slums.exe"])
     time.sleep(3)
     print 'Installing Files'
     print 'Creating Images'
     print 'Zombie Slums Installed Successfuly'
+
+## TMG Christmas 1.1
+
 elif(args.map_name == 'tmg_christmas1.1'):
-    print 'mapname = TMG Christmas 1.1'
-    print 'homepage = http://www.zommods.com'
-    print 'map_homepage = http://zommods.com/tmg-christmas/'
+    mapname = 'TMG Christmas 1.1'
+    homepage = 'http://www.zommods.com'
+    map_homepage = 'http://zommods.com/tmg-christmas/'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C:\\Desktop\TMG_Christmas1.1.exe"])
     time.sleep(3)
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Weather'
     print 'TMG Christmas 1.1 Installed Successfuly'
+
+## Purple Dimension
+
 elif(args.map_name == 'purple_dimension'):
-    print 'mapname = Purple Dimension'
-    print 'homepage = http://www.zombiemodding.com'
-    print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771'
+    mapname = 'Purple Dimension'
+    homepage = 'http://www.zombiemodding.com'
+    map_homepage = 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C:\\Desktop\PurpleDimension.exe"])
     time.sleep(5)
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Weather'
     print 'Purple Dimension Installed Successfuly'
+
+## survivedabox
+
 elif(args.map_name == 'survivedabox'):
-    print 'mapname = survivedabox'
-    print 'homepage = http://www.zombiemodding.com'
-    print 'map_homepage = http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819'
+    mapname = 'survivedabox'
+    homepage = 'http://www.zombiemodding.com/'
+    map_homepage = 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C://Desktop/survivedabox.exe"])
     time.sleep(2)
     print 'Installing Files'
     print 'Creating Images'
     print 'survivedabox Installed Successfuly'
+
+## Cryogenic 
+
 elif(args.map_name == 'cryogenic'):
-    print 'mapname = Cryogenic'
-    print 'homepage = http://www.ugx-mods.com'
-    print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=5860.0'
+    mapname = 'Cryogenic'
+    homepage = 'http://www.ugx-mods.com'
+    map_homepage = 'http://ugx-mods.com/forum/index.php?topic=5860.0'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C://Desktop/Cryogenic.exe"])
     time.sleep(5)
     print 'Installing Files'
     print 'Creating Images'
     print 'Setting Blood Rain'
     print 'Cryogenic Installed Successfuly'
+
+## One Window Challange
+
 elif(args.map_name == 'one_window_challange'):
-    print 'mapname = One Window Challange'
-    print 'homepage = http://zommods.com/'
-    print 'map_homepage = http://zommods.com/zm_one-window-challenge/'
+    mapname = 'One Window Challange'
+    homepage = 'http://www.zommods.com'
+    map_homepage = 'http://www.zommods.com/zm_one-window-challenge/'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C://Desktop/zm_owc.exe"])
     time.sleep(2)
     print 'Installing Files'
+    time.sleep(2)
     print 'Creating Images'
     print 'One Window Challange Installed Successfuly'
+
+## Project Viking
+
 elif(args.map_name == 'project_viking1.0.2_beta'):
-    print 'mapname = Project Viking 1.0.2 Beta'
-    print 'homepage = http://ugx-mods.com/'
-    print 'map_homepage = http://ugx-mods.com/forum/index.php?topic=1620.0'
+    mapname = 'Project Viking 1.0.2 Beta'
+    homepage = 'http://www.ugx-mods.com'
+    map_homepage = 'http://ugx-mods.com/forum/index.php?topic=1620.0'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
     ## subprocess.call(["C://Desktop/ProjectVikingBetaV1.0.2.exe"])
     time.sleep(4)
     print 'Installing Files'
+    time.sleep(2)
     print 'Creating Images'
     print 'Project Viking Beta 1.0.2 Installed Successfuly'
+
+## KFC
+
+elif(args.map_name == 'kfc'):
+    mapname = 'KFC Zombie'
+    homepage = 'http://www.zombiemodding.com/'
+    map_homepage = 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
+    ## subprocess.call([C:\\Desktop\KFC.exe])
+    time.sleep(3)
+    print 'Installing Files'
+    time.sleep(2)
+    print 'Creating Images'
+    print 'Zombie KFC Map Installed Successfuly'
+
+## Cheese Cube Unlimited 
+
+elif(args.map_name == 'cheese_cube_unlimited'):
+    homepage = 'http://www.ugx-mods.com/'
+    map_homepage = 'http://ugx-mods.com/forum/index.php?topic=2973.0'
+    mapname = 'Cheese Cube Unlimited'
+    print 'mapname = ' + mapname
+    print 'homepage = ' + homepage
+    print 'map_homepage = ' + map_homepage
+    # subprocess.call([C:\\Desktop\Cheese/ Cube/ Unlimited/ v1.0.exe])
+    time.sleep(2)
+    print 'Installing Scripts'
+    time.sleep(2)
+    print 'Creating Images'
+    time.sleep (3)
+    print 'Cheese Cube Unlimited Installed Successfuly'
 
 ## Map Removes
 
@@ -183,5 +280,24 @@ elif(args.remove_map_name == 'project_viking1.0.2_beta'):
     print 'Removing from Root'
     time.sleep(4)
     print 'Project Viking Beta 1.0.2 Uninstalled with No Errors'
+elif(args.remove_map_name == 'kfc'):
+    print 'Removing Files/Scripts'
+    time.sleep(2)
+    print 'Removing from Mods Folder'
+    time.sleep(2)
+    print 'Removing from Root'
+    time.sleep(4)
+    print 'KFC Uninstalled with No Errors'
+elif(args.remove_map_name) == 'cheese_cube_unlimited':
+    print 'Removing Files/Scripts'
+    time.sleep(2)
+    print 'Removing from Mods Folder'
+    time.sleep(2)
+    print 'Removing from Root'
+    time.sleep(4)
+    print 'Cheese Cube Unlimited Uninstalled with No Errors'
+
+
+
 
 
