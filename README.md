@@ -1,6 +1,8 @@
 # waw-manager
 World At War Mod Manager
 
+WaW Mod Manager Version 1.0 - First Update
+
 Ever wanted a custom zombies map or mod but couldnt find the right download link.
 Your in luck because this will solve that problem. Simply open the command prompt
 and type in "./waw-manager.py -i" and the map name and boom the map is being installed.
@@ -22,4 +24,15 @@ Mod List:
 UGX Mod 1.0.4 (UGX Mod 1.1 When Released)
 WaW Mod Tools
 
-WaW Mod Manager Version 1.0
+WaW Mod Manager Version 1.1 - Second Update
+
+- New Command: -status / Display's Status of WaW Online, WaW Mod Manager, and Multiple Mod Website's
+- New Command: -list  / Displays List of all Mods and Maps
+
+- New Map: Project Viking Beta 1.0.2
+- New Map: Cryogenic
+
+- New Mod: Black Ops Perk Mod (For Developer)
+
+- Program waits when installing a map or mod
+- Program installs when on windows.

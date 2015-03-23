@@ -29,6 +29,7 @@ if(args.list == 'list'):
     print 'Mods:'
     print 'WaW Mod Tools'
     print 'UGX Mod 1.0.4'
+    print 'Black Ops Perks Mod'
 
 if(args.status == 'status'):
     print 'WaW Online Services: Running'
@@ -144,7 +145,7 @@ elif(args.map_name == 'project_viking1.0.2_beta'):
     print 'Creating Images'
     print 'Project Viking Beta 1.0.2 Installed Successfuly'
 
-## Map Uninstalls
+## Map Removes
 
 if(args.remove_map_name == 'zombie_cargo'):
     print 'Removing Files/Scripts'
