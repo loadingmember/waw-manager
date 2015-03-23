@@ -36,3 +36,12 @@ WaW Mod Manager Version 1.1 - Second Update
 
 - Program waits when installing a map or mod
 - Program installs when on windows.
+
+WaW Mod Manager 1.2 - Third Update
+
+- New Map: Cheese Cube Unlimited
+- New Map: Cheese Cube
+
+- Bug Fixes
+
+- Better Code Orginazation

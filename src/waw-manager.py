@@ -26,6 +26,8 @@ if(args.list == 'list'):
     print 'cryogenic'
     print 'project_viking1.0.2_beta'
     print 'kfc'
+    print 'cheese_cube_unlimited'
+    print 'cheese_cube'
     print ''
     print 'Mods:'
     print 'waw_modtools'
