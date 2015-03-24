@@ -55,3 +55,19 @@ WaW Mod Manager 1.3 - Fourth Update
 - Bug Fixes
 
 - Better Code Orginazation
+
+WaW Mod Manager 1.4 - Fifth Update
+
+- Changed Commands
+
+- Bug Fixes
+
+- Changes to "-rmmod" command 
+
+
+
+
+
+
+
+
