@@ -6,18 +6,23 @@ import time
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.3')
 
-parser.add_argument('-version','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.3')
-parser.add_argument('-installmap','--install', help='Install new map', action='store', dest='map_name', required=False)
-parser.add_argument('-installmod', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
-parser.add_argument('-rmmap','--uninstall', help='Uninstall map', action='store', dest='remove_map_name', required=False)
-parser.add_argument('-rmmod', '--uninstallmod', help='Uninstall mod', action='store', dest='remove_mod_name', required=False)
-parser.add_argument('-status', '--wawstatus', help='Displays the WaW Status', action='store', dest='status', required=False)
-parser.add_argument('-list', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store', dest='list', required=False)
+parser.add_argument('-v','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.3')
+parser.add_argument('-i','--install', help='Install new map', action='store', dest='map_name', required=False)
+parser.add_argument('-m', '--installmod', help='Installs Specified Mod', action='store', dest='mod_name', required=False)
+parser.add_argument('-rmod','--uninstall', help='Uninstall map', action='store', dest='remove_map_name', required=False)
+parser.add_argument('-rm', '--uninstallmod', help='Uninstall mod', action='store', dest='remove_mod_name', required=False)
+parser.add_argument('-s', '--status', help='Displays the WaW Status', action='store_true', dest='status', required=False)
+parser.add_argument('-l', '--listofmaps', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
+parser.add_argument('-a', '--addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
 
 args = parser.parse_args()
 
+## ERROR
+if(args.user_map_name):
+    print args.user_map_name + "added to our directory"
+## ERROR ^
 
-if(args.list == 'list'):
+if(args.list):
     print 'Maps:'
     print 'zombie_cargo'
     print 'zombie_slums'
@@ -37,7 +42,7 @@ if(args.list == 'list'):
     print 'black_ops_weapons'
     print 'scaretimes_scripts'
 
-if(args.status == 'status'):
+if(args.status):
     print 'WaW Online Services: Running'
     print 'WaW Mod Manager 1.3: Running'
     print "www.zombiemodding.com: Running"
