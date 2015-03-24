@@ -2,7 +2,7 @@
 
 import argparse
 import subprocess
-import time
+from ProcessArgument import ProcessArgument
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.3')
 
@@ -22,25 +22,10 @@ if(args.user_map_name):
     print args.user_map_name + "added to our directory"
 ## ERROR ^
 
+process_argument = ProcessArgument()
+
 if(args.list):
-    print 'Maps:'
-    print 'zombie_cargo'
-    print 'zombie_slums'
-    print 'tmg_christmas1.1'
-    print 'purple_dimension'
-    print 'survivedabox'
-    print 'cryogenic'
-    print 'project_viking1.0.2_beta'
-    print 'kfc'
-    print 'cheese_cube_unlimited'
-    print 'cheese_cube'
-    print ''
-    print 'Mods:'
-    print 'waw_modtools'
-    print 'ugx_mod_1_0_4'
-    print 'black_ops_perks'
-    print 'black_ops_weapons'
-    print 'scaretimes_scripts'
+    process_argument.list()
 
 if(args.status):
     print 'WaW Online Services: Running'
