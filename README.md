@@ -1,4 +1,4 @@
-# waw-manager
+# wawmanager
 World At War Mod Manager
 
 WaW Mod Manager Version 1.0 - First Update
