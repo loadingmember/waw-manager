@@ -2,7 +2,7 @@ import time
 from WawMaps import WawMaps
 
 class ZombieCargo(WawMaps):
-   
+
    def install(self):
       print 'mapname = ' + self.mapname
       print 'homepage = ' + self.homepage
@@ -18,3 +18,8 @@ class ZombieCargo(WawMaps):
       print 'Installing FX'
       time.sleep(2)
       print 'Zombie Cargo Installed Successfuly'
+
+   def uninstall(self):
+      print 'Removing Files/Scripts'
+      time.sleep(2)
+      print 'Zombie Cargo Map Uninstalled with No Errors'

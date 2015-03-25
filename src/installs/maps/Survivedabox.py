@@ -15,3 +15,8 @@ class Survivedabox(WawMaps):
 		print 'Creating Images'
 		time.sleep(3)
 		print 'Survivedabox Sucessfuly Installed'
+
+	def uninstall(self):
+		print 'Removing Files/Scripts'
+		time.sleep(2)
+		print 'survivedabox Map Uninstalled with No Errors'

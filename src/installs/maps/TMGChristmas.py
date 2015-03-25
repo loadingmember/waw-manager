@@ -17,4 +17,9 @@ class TMGChristmas(WawMaps):
 		print 'Creating FX'
 		time.sleep(3)
 		print 'TMG Christmas Sucessfuly Installed'
+
+	def uninstall(self):
+		print 'Removing Files'
+		time.sleep(2)
+		print 'TMG Christmas 1.1 Uninstalled with No Errors'
 		

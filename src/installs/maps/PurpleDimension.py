@@ -17,3 +17,8 @@ class PurpleDimension(WawMaps):
 		print 'Determing Size'
 		time.sleep(3)
 		print 'Purple Dimension Sucsesfuly Installed'
+
+	def uninstall(self):
+		print 'Removing Files/Scripts'
+		time.sleep(2)
+		print 'Purple Dimension Map Uninstalled with No Errors'
