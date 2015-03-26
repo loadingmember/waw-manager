@@ -22,3 +22,12 @@ class Kfc(WawMaps):
         print 'Removing from Root'
         time.sleep(4)
         print 'KFC Uninstalled with No Errors'
+
+    def description(self):
+        print 'mapname = ' + self.mapname
+        print 'homepage = ' + self.homepage
+        print 'map_homepage = ' + self.map_homepage
+        print 'Custom Textures'
+        print 'Custom Transit Zombies'
+        print 'Custom Buyable Guns'
+        print 'Friendly AI'

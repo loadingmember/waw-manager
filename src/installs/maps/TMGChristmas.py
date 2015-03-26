@@ -22,4 +22,14 @@ class TMGChristmas(WawMaps):
 		print 'Removing Files'
 		time.sleep(2)
 		print 'TMG Christmas 1.1 Uninstalled with No Errors'
-		
+
+	def description(self):
+		print 'mapname = ' + self.mapname
+		print 'homepage = ' + self.homepage
+		print 'map_homepage = ' + self.map_homepage
+		print '- Soul Chests'
+		print '- Snow'
+		print '- MW2 Guns'
+		print '- Black Ops 2 Weapons'
+		print '- All Perks + Custom Perks'
+		print '- All Wonder Weapons'

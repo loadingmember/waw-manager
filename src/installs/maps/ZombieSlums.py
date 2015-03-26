@@ -21,4 +21,11 @@ class ZombieSlums(WawMaps):
 		print 'Removing Files/Scripts'
 		time.sleep(2)
 		print 'Zombie Slums Map Uninstaled with No Errors'
-		
+
+	def description(self):
+		print 'mapname = ' + self.mapname
+		print 'homepage = ' + self.homepage
+		print 'map_homepage = ' + self.map_homepage
+		print '- 10 Perks'
+		print '- No Easter Egg'
+		print '- Custom Wonder Weapon: Raygun Mark 3 (Fully-Auto)'

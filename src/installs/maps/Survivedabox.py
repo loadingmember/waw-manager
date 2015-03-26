@@ -20,3 +20,14 @@ class Survivedabox(WawMaps):
 		print 'Removing Files/Scripts'
 		time.sleep(2)
 		print 'survivedabox Map Uninstalled with No Errors'
+
+	def description(self):
+		print 'mapname = ' + self.mapname
+		print 'homepage = ' + self.homepage
+		print 'map_homepage = ' + self.map_homepage
+		print '- Box Map'
+		print '- Buyable Extra Room'
+		print '- All Perks and Packa-a-Punch'
+		print '- 5000000 Starting Points'
+		print '- 2 Zombie Windows'
+		print '- Teleporter'
