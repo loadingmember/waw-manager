@@ -64,10 +64,16 @@ WaW Mod Manager 1.4 - Fifth Update
 
 - Changes to "-rmmod" command 
 
+WaW Mod Manager 1.5 - Sixth Update
 
+- Better Code Orginazation
 
+- New Classes for Every Map and Mod
 
+- New Maps
 
+- New Mods
 
+- New Command: Status
 
-
+- New Command: List
