@@ -16,6 +16,11 @@ from installs.maps.ProjectViking import ProjectViking
 from installs.maps.Kfc import Kfc
 from installs.maps.CheeseCube import CheeseCube
 from installs.maps.CheeseCubeUnlimited import CheeseCubeUnlimited
+from installs.mods.Ugx104 import Ugx104
+from installs.mods.WawModtools import WawModtools
+from installs.mods.BlackopsPerks import BlackopsPerks
+from installs.mods.BlackopsWeapons import BlackopsWeapons
+from installs.mods.ScaretimesScripts import ScaretimesScripts
 
 
 
@@ -44,54 +49,24 @@ if(args.status):
     status.display_status()    
 
 if(args.arg_mod == 'ugx_mod_1_0_4'):
-    print 'mod_name = UGX Mod 1.0.4'
-    print 'Copying Files to c://ProgramFilesx86/Steam/steamapps/common/CallofDutyWorldatWar'
-    print 'Installing .gsc Files'
-    time.sleep(2)
-    print 'Installing Yo Momma'
-    print 'WARNING: It is not our fault if you do not backup your root'
-    raw_input("PRESS ENTER TO CONTINUE:")
-    time.sleep(3)
-    print 'UGX Mod 1.0.4 Installed Successfuly'
+    ugx = Ugx104('UGX Mod 1.0.4', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=537.0')
+    ugx.install()
+
 elif(args.arg_mod == 'waw_modtools'):
-    print 'Copying Files to c://ProgramFilesx86/Steam/steamapps/common/CallofDutyWorldatWar. Completed'
-    print 'Running Shell Scripts. Completed'
-    print 'WARNING: It is not our fault if you do not back up your root'
-    raw_input("PRESS ENTER TO CONTINUE:")
-    time.sleep(2)
-    print 'Installing Launcher. Completed'
-    time.sleep(2)
-    print 'Installing Script Placer. Completed'
-    time.sleep(2)
-    print 'Installing WeaponsEditor++. Completed'
-    time.sleep(2)
-    print 'Installing Map Manager. Completed'
-    time.sleep(2)
-    print 'WaW Mod Tools Successfuly Installed'
+    wawmodtools = WawModtools('WaW Modtools', 'http://www.callofduty.gamefront.com/', 'http://callofduty.filefront.com/file/;95890')
+    wawmodtools.install()
+
 elif(args.arg_mod == 'black_ops_perks'):
-    print 'mod_name = Black Ops Perks'
-    print 'Copying files to root directory'
-    print 'Copying Prefabs'
-    print 'WARNING: It is not our fault if you do not back up your root'
-    raw_input("PRESS ENTER TO CONTINUE:")
-    time.sleep(2)
-    print 'Black Ops Perks Successfuly Installed'
+    blackopsperks = BlackopsPerks('Black Ops Perks', 'http://www.mediafire.com', 'http://www.mediafire.com/download/nnsc6xfqewrn9qo/update_1.zip')
+    blackopsperks.install()
+
 elif(args.arg_mod == 'black_ops_weapons'):
-    print 'mod_name = Black Ops Weapons'
-    print 'Copying Files to root directory'
-    print 'Copying Files'
-    raw_input("PRESS ENTER TO CONTINUE:")
-    time.sleep(2)
-    print 'Black Ops Weapons Successfuly Installed'
+    blackopsweapons = BlackopsWeapons('Black Ops Weapons for WaW', 'Not Found', 'Not Found')
+    blackopsweapons.install()
+
 elif(args.arg_mod == 'scaretimes_scripts'):
-    print 'mod_name = Scaretimes Scripts and Prefabs'
-    print 'Copying Files to root directory'
-    print 'Copying Scripts'
-    print 'Copying Prefabs'
-    print 'WARNING: It is not our fault if you do not backup your root directory'
-    raw_input("PRESS ENTER TO CONTINUE:")
-    time.sleep(4)
-    print 'Scaretimes Scripts and Prefabs Successfuly Installed'
+    scaretimes_scripts = ScaretimesScripts('Scaretimes Scripts and Prefabs', 'None', 'None')
+    scaretimes_scripts.install()
 
 ## Map Installs Below
 
