@@ -46,7 +46,7 @@ if args.list:
 
 if args.status:
     status = Status()
-    status.display_status()    
+    status.display_status()   
 
 if args.arg_mod == 'ugx_mod_1_0_4':
     ugx = Ugx104('UGX Mod 1.0.4', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=537.0')
@@ -203,7 +203,7 @@ elif args.remove_mod_name == 'cheese_cube':
     cheese_cube = CheeseCube('Cheese Cube', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
     cheese_cube.uninstall()
 
-## Descriptions ###################################################################################################################################
+## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
     cheese_cube = CheeseCube('Cheese Cube', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
@@ -249,7 +249,27 @@ elif args.desc_arg_mod == 'zombie_slums':
     zombie_slums = ZombieSlums('Zombie Slums', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661')
     zombie_slums.description()
 
+## Mod Descriptions ##############################################################################################
 
+if args.desc_arg_mod == 'black_ops_perks':
+    blackopsperks = BlackopsPerks('Black Ops Perks', 'http://www.mediafire.com', 'http://www.mediafire.com/download/nnsc6xfqewrn9qo/update_1.zip')
+    blackopsperks.description()
+
+elif args.desc_arg_mod == 'black_ops_weapons':
+    blackopsweapons = BlackopsWeapons('Black Ops Weapons for WaW', 'Not Found', 'Not Found')
+    blackopsweapons.description()
+
+elif args.desc_arg_mod == 'scaretimes_scripts':
+    scaretimes_scripts = ScaretimesScripts('Scaretimes Scripts and Prefabs', 'None', 'None')
+    scaretimes_scripts.description()
+
+elif args.desc_arg_mod == 'ugx_mod_1_0_4':
+    ugx = Ugx104('UGX Mod 1.0.4', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=537.0')
+    ugx.description()            
+
+elif args.desc_arg_mod == 'waw_modtools':
+    wawmodtools = WawModtools('WaW Modtools', 'http://www.callofduty.gamefront.com/', 'http://callofduty.filefront.com/file/;95890')
+    wawmodtools.description()
 
 
 

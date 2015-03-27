@@ -21,3 +21,13 @@ class WawModtools(WawMods):
 		print 'Installing Map Manager. Completed'
 		time.sleep(2)
 		print 'WaW Modtools Now Installed'
+
+	def description(self):
+		print 'modname = ' + self.modname
+		print 'homepage = ' + self.homepage
+		print 'mod_homepage = ' + self.mod_homepage
+		print 'WaW Mod Tools is a must have for mod developing.'
+		print 'It adds a whole ton of classes and prefabs'
+		print 'and installs Launcher.'
+		print 'If you download it from now it also adds Script Manager'
+		print 'and Map Manager'
