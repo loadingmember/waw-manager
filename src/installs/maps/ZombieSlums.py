@@ -1,5 +1,5 @@
 import time
-from WawMaps import WawMaps
+from .WawMaps import WawMaps
 
 class ZombieSlums(WawMaps):
 

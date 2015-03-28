@@ -1,7 +1,7 @@
 import time
 import os
 import sys
-from WawMaps import WawMaps
+from .WawMaps import WawMaps
 
 class Labyrinth(WawMaps):
 

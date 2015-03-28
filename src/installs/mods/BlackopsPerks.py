@@ -1,5 +1,5 @@
 import time
-from WawMods import WawMods
+from .WawMods import WawMods
 
 class BlackopsPerks(WawMods):
 

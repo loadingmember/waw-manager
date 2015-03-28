@@ -1,4 +1,4 @@
-from WawMaps import WawMaps
+from .WawMaps import WawMaps
 import time
 
 class Survivedabox(WawMaps):
