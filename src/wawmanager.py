@@ -5,6 +5,7 @@ import subprocess
 import time
 from Status import Status
 from List import List
+from slack.Slack import Slack
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
 from installs.maps.TMGChristmas import TMGChristmas
@@ -35,6 +36,7 @@ parser.add_argument('-l', '--list', help='Show a List of Installable Maps and Mo
 parser.add_argument('-a', '--addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
 
 args = parser.parse_args()
+slack = Slack()
 
 ## Prints the user_map_name
 if args.user_map_name:
@@ -75,6 +77,7 @@ elif args.arg_mod == 'scaretimes_scripts':
 if args.arg_mod == 'zombie_cargo':
     zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')
     zombie_cargo.install()
+    slack.send_message("#coding", "Zombie Cargo installed")
 
 ## Zombie Slums
 
