@@ -7,6 +7,6 @@ class Slack():
 
 		conn.connect()
 
-		print '/services/hooks/slackbot?' + urllib.urlencode({'token': 'ibQkhDVPikVUZGJVunjcifrs', 'channel': slack_channel})
+		print('/services/hooks/slackbot?' + urllib.urlencode({'token': 'ibQkhDVPikVUZGJVunjcifrs', 'channel': slack_channel}))
 
 		conn.request('POST', '/services/hooks/slackbot?' + urllib.urlencode({'token': 'ibQkhDVPikVUZGJVunjcifrs', 'channel': slack_channel}), message)

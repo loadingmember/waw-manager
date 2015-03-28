@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python3
 
 import argparse
 import subprocess
@@ -29,7 +29,7 @@ from installs.mods.ScaretimesScripts import ScaretimesScripts
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.5')
 
-parser.add_argument('-v','--version', help='Print Version', action='version', version='WaW Mod Manager Version 1.3')
+parser.add_argument('-v','--version', help='print(Version', action='version', version='WaW Mod Manager Version 1.3')
 parser.add_argument('-i','--install', help='Install new map', action='store', dest='arg_mod', required=False)
 parser.add_argument('-d', '--desc', help='Shows Description of Specified Map or Mod', action='store', dest='desc_arg_mod', required=False)
 parser.add_argument('-rm','--uninstallmap', help='Uninstall map', action='store', dest='remove_mod_name', required=False)
@@ -42,7 +42,7 @@ slack = Slack()
 
 ## Prints the user_map_name
 if args.user_map_name:
-    print args.user_map_name + "added to our directory"
+    print(args.user_map_name + "added to our directory")
 
 if args.list:
     list = List()
@@ -148,8 +148,6 @@ elif args.arg_mod == 'bikini_bottom':
 elif args.arg_mod == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.install()
-
-elif args
 
 ## Map Removes #########################################################################################################################
 
