@@ -17,6 +17,7 @@ from installs.maps.Kfc import Kfc
 from installs.maps.CheeseCube import CheeseCube
 from installs.maps.CheeseCubeUnlimited import CheeseCubeUnlimited
 from installs.maps.BikiniBottom import BikiniBottom
+from installs.maps.Labyrinth import Labyrinth
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -141,6 +142,10 @@ elif args.arg_mod == 'bikini_bottom':
     bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
     bikini_bottom.install()
 
+elif args.arg_mod == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -211,6 +216,9 @@ elif args.remove_mod_name == 'bikini_bottom':
     bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
     bikini_bottom.uninstall()
 
+elif args.remove_mod_name == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.uninstall()
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -260,6 +268,10 @@ elif args.desc_arg_mod == 'zombie_slums':
 elif args.desc_arg_mod == 'bikini_bottom':
     bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
     bikini_bottom.description()
+
+elif args.desc_arg_mod == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.description()
 
 ## Mod Descriptions ##############################################################################################
 
