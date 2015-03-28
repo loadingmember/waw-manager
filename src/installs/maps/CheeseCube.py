@@ -12,7 +12,7 @@ class CheeseCube(WawMaps):
         print 'Installing Files/Scripts'
         time.sleep(2)
         print 'Creating Images'
-        print time.sleep(1)
+        time.sleep(1)
         print 'Cheese Cube Installed Successfuly'
 
     def uninstall(self):
