@@ -17,6 +17,8 @@ from installs.maps.ProjectViking import ProjectViking
 from installs.maps.Kfc import Kfc
 from installs.maps.CheeseCube import CheeseCube
 from installs.maps.CheeseCubeUnlimited import CheeseCubeUnlimited
+from installs.maps.BikiniBottom import BikiniBottom
+from installs.maps.Labyrinth import Labyrinth
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -48,7 +50,7 @@ if args.list:
 
 if args.status:
     status = Status()
-    status.display_status()   
+    status.display_status() 
 
 if args.arg_mod == 'ugx_mod_1_0_4':
     ugx = Ugx104('UGX Mod 1.0.4', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=537.0')
@@ -138,7 +140,14 @@ elif args.arg_mod == 'cheese_cube_unlimited':
 elif args.arg_mod == 'cheese_cube':
     cheese_cube = CheeseCube('Cheese Cube by ZK', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
     cheese_cube.install()
-    
+
+elif args.arg_mod == 'bikini_bottom':
+    bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
+    bikini_bottom.install()
+
+elif args.arg_mod == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.install()
 
 ## Map Removes #########################################################################################################################
 
@@ -206,6 +215,13 @@ elif args.remove_mod_name == 'cheese_cube':
     cheese_cube = CheeseCube('Cheese Cube', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
     cheese_cube.uninstall()
 
+elif args.remove_mod_name == 'bikini_bottom':
+    bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
+    bikini_bottom.uninstall()
+
+elif args.remove_mod_name == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.uninstall()
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -251,6 +267,14 @@ elif args.desc_arg_mod == 'zombie_cargo':
 elif args.desc_arg_mod == 'zombie_slums':
     zombie_slums = ZombieSlums('Zombie Slums', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661')
     zombie_slums.description()
+
+elif args.desc_arg_mod == 'bikini_bottom':
+    bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
+    bikini_bottom.description()
+
+elif args.desc_arg_mod == 'labyrinth':
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.description()
 
 ## Mod Descriptions ##############################################################################################
 
