@@ -149,6 +149,8 @@ elif args.arg_mod == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.install()
 
+elif args
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':

@@ -9,6 +9,7 @@ class Labyrinth(WawMaps):
 		print 'mapname = ' + self.mapname
 		print 'homepage = ' + self.homepage
 		print 'map_homepage = ' + self.map_homepage
+		## subprocess.call([C:\\Desktop\labyrinth.exe])
 		time.sleep(2)
 		print 'Installing Files'
 		time.sleep(2)
