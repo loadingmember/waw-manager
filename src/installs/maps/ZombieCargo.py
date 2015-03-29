@@ -1,43 +1,54 @@
 import time
 from .WawMaps import WawMaps
+from slack.Slack import Slack
+import tkinter as tk
+from tkinter import *
 
 class ZombieCargo(WawMaps):
 
-   def install(self):
-      print('mapname = ' + self.mapname)
-      print('homepage = ' + self.homepage)
-      print('map_homepage = ' + self.map_homepage)
-      ## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
-      time.sleep(2)
-      print('Installing Files')
-      time.sleep(4)
-      print('Creating Images')
-      time.sleep(2)
-      print('Creating Background Images')
-      time.sleep(2)
-      print('Installing FX')
-      time.sleep(2)
-      print('Zombie Cargo Installed Successfuly')
+      def install(self):
+            print('mapname = ' + self.mapname)
+            print('homepage = ' + self.homepage)
+            print('map_homepage = ' + self.map_homepage)
+            ## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
+            time.sleep(2)
+            print('Installing Files')
+            time.sleep(4)
+            print('Creating Images')
+            time.sleep(2)
+            print('Creating Background Images')
+            time.sleep(2)
+            print('Installing FX')
+            time.sleep(2)
+            print('Zombie Cargo Installed Successfuly')
+            Slack.send_message('#coding', 'Map Installed: Zombie Cargo')
 
-   def uninstall(self):
-      print('Removing Files/Scripts')
-      time.sleep(2)
-      print('Zombie Cargo Map Uninstalled with No Errors')
+      def install(self, output):
+            output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
+            output.insert(END, 'homepage = ' + self.homepage + '\n')
+            output.insert(END, 'map_homepage = ' + self.map_homepage + '\n')
+            time.sleep(2)
+            output.insert(END, 'Installing Files\n')
 
-   def description(self):
-      print('mapname = ' + self.mapname)
-      print('homepage = ' + self.homepage)
-      print('map_homepage = ' + self.map_homepage)
-      print('- 9 Perks')
-      print('- Black Ops 2 Weapons with a few Modern Warfare 2 guns')
-      print('- Kino Style Teleporter')
-      print('- Expanded Map and Hidden Rooms')
-      print('- Buildables')
-      print('- 80 FOV')
-      print('- Rain FX and Rain SFX')
-      print('- Custom Pack a Punch Camo')
-      print('- Double Tap 2.0')
-      print('- A Unique way to Obtain Perk Slots')
-      print('- Zombie Counter')
-      print('- Buyable Ending')
-      print('- Nuketown Zombie Models')
+      def uninstall(self):
+            print('Removing Files/Scripts')
+            time.sleep(2)
+            print('Zombie Cargo Map Uninstalled with No Errors')
+
+      def description(self):
+            print('mapname = ' + self.mapname)
+            print('homepage = ' + self.homepage)
+            print('map_homepage = ' + self.map_homepage)
+            print('- 9 Perks')
+            print('- Black Ops 2 Weapons with a few Modern Warfare 2 guns')
+            print('- Kino Style Teleporter')
+            print('- Expanded Map and Hidden Rooms')
+            print('- Buildables')
+            print('- 80 FOV')
+            print('- Rain FX and Rain SFX')
+            print('- Custom Pack a Punch Camo')
+            print('- Double Tap 2.0')
+            print('- A Unique way to Obtain Perk Slots')
+            print('- Zombie Counter')
+            print('- Buyable Ending')
+            print('- Nuketown Zombie Models')

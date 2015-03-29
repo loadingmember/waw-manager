@@ -2,7 +2,8 @@ import http.client, urllib.parse
 
 class Slack():
 
-	def send_message(self, slack_channel, message):
+	@staticmethod
+	def send_message(slack_channel, message):
 		conn = http.client.HTTPSConnection('zalukfamily.slack.com')
 
 		conn.connect()

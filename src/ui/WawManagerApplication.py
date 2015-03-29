@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import *
+from installs.maps.ZombieCargo import ZombieCargo
 
 class WawManagerApplication(tk.Frame):
     
@@ -7,6 +9,16 @@ class WawManagerApplication(tk.Frame):
 		self.parent = master
 		self.parent.title("WawManager Application")
 		self.center_window()
+		self.button = tk.Button(self.master, text="Press Me!")
+		self.button.bind('<ButtonPress>', self.press)
+		self.output = Text(self.master)
+		self.output.height = 5
+		self.button.pack()
+		self.output.pack()
+
+	def press(self, *args):
+		zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')
+		zombie_cargo.install(self.output)
 
 	def center_window(self):
 		w = 500
