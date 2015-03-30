@@ -12,20 +12,24 @@ class WawManagerApplication(tk.Frame):
 		self.parent.title("WawManager Application")
 		self.center_window()
 		## Cargo Button
-		self.button = tk.Button(self.master, text="Install Zombie Cargo")
-		self.button.bind('<ButtonPress>', self.press_cargo)
+		self.cargo = tk.Button(self.master, text="Install Zombie Cargo")
+		self.cargo.bind('<ButtonPress>', self.press_cargo)
 		## Slums Button
-		slums = tk.Button(self.master, text="Install Zombie Slums")
-		slums.bind('<ButtonPress>', self.press_slums)
+		self.slums = tk.Button(self.master, text="Install Zombie Slums")
+		self.slums.bind('<ButtonPress>', self.press_slums)
 		## TMG Button
-		tmg = tk.Button(self.master, text="Install TMG Christmas 1.1")
-		tmg.bind('<ButtonPress>', self.press_tmg)
+		self.tmg = tk.Button(self.master, text="Install TMG Christmas 1.1")
+		self.tmg.bind('<ButtonPress>', self.press_tmg)
 		self.output = Text(self.master)
 		self.output.height = 10
-		self.button.pack(side=LEFT)
-		slums.pack(side=LEFT)
-		tmg.pack(side=LEFT)
-		self.output.pack(side=RIGHT)
+		# self.button.pack(side=LEFT)
+		# self.slums.pack(side=LEFT)
+		self.cargo.grid(row=0, column=0)
+		self.slums.grid(row=1, column=0)
+		self.tmg.grid(row=2, column=0)
+		self.output.grid(row=0, column=1, rowspan=3)
+		# self.tmg.pack(side=LEFT, padx=20, pady=20)
+		# self.output.pack(side=RIGHT)
 
 	def press_cargo(self, *args):
 		zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')

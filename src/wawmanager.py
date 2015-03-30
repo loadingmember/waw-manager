@@ -4,6 +4,7 @@ import argparse
 import subprocess
 import time
 import tkinter as tk
+import sys, os
 from Status import Status
 from List import List
 from ui.WawManagerApplication import WawManagerApplication
@@ -43,9 +44,10 @@ args = parser.parse_args()
 
 if args.open_ui:
     root = tk.Tk()
+    # img = tk.PhotoImage(file='icon.gif')
+    # root.tk.call('wm', 'iconphoto', root._w, img)
     app = WawManagerApplication(master=root)
     app.mainloop()
-
 
 ## Prints the user_map_name
 if args.user_map_name:
