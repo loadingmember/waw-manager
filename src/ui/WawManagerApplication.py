@@ -3,6 +3,9 @@ from tkinter import *
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
 from installs.maps.TMGChristmas import TMGChristmas
+from installs.maps.Survivedabox import Survivedabox
+from installs.maps.PurpleDimension import PurpleDimension
+from installs.maps.ProjectViking import ProjectViking
 
 class WawManagerApplication(tk.Frame):
     
@@ -20,14 +23,32 @@ class WawManagerApplication(tk.Frame):
 		## TMG Button
 		self.tmg = tk.Button(self.master, text="Install TMG Christmas 1.1")
 		self.tmg.bind('<ButtonPress>', self.press_tmg)
+		## Survivedabox Button
+		self.survive = tk.Button(self.master, text="Install SurvivedaBox")
+		self.survive.bind('<ButtonPress>', self.press_survive)
+		## Puple Dimension Button
+		self.purpled = tk.Button(self.master, text="Install Purple Dimension")
+		self.purpled.bind('<ButtonPress>', self.press_purpled)
+		## Project Viking
+		self.viking = tk.Button(self.master, text="Install Project Viking")
+		self.viking.bind('<ButtonPress>', self.press_viking)
+		## One Window Button
+		self.onewindow = tk.Button(self.master)
+		self.onewindow.bind('<ButtonPress>', self.press_onewindow)
+		## Output
 		self.output = Text(self.master)
 		self.output.height = 10
+		self.output.width = 10
 		# self.button.pack(side=LEFT)
 		# self.slums.pack(side=LEFT)
 		self.cargo.grid(row=0, column=0)
 		self.slums.grid(row=1, column=0)
 		self.tmg.grid(row=2, column=0)
-		self.output.grid(row=0, column=1, rowspan=3)
+		self.survive.grid(row=3, column=0, rowspan=1)
+		self.purpled.grid(row=4, column=0, rowspan=1)
+		self.viking.grid(row=5, column=0, rowspan=1)
+		self.onewindow.grid(row=6, column=0)
+		self.output.grid(row=0, column=1, rowspan=1)
 		# self.tmg.pack(side=LEFT, padx=20, pady=20)
 		# self.output.pack(side=RIGHT)
 
@@ -42,6 +63,18 @@ class WawManagerApplication(tk.Frame):
 	def press_tmg(self, *args):
 		tmg = TMGChristmas('TMG Christmas 1.1', 'http://www.zommods.com', 'http://zommods.com/tmg-christmas/')
 		tmg.install(self.output)
+
+	def press_survive(self, *args):
+		survive = Survivedabox('survivedabox', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819')
+		survive.install(self.output)
+
+	def press_purpled(self, *args):
+		purpled = PurpleDimension('Purple Dimension', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771')
+		purpled.install(self.output)
+
+	def press_viking(self, *args):
+		viking = ProjectViking('Project Viking Beta 1.0.2', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=1620.0')
+		viking.install(self.output)
 
 	def center_window(self):
 		w = 1000

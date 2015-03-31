@@ -38,7 +38,7 @@ parser.add_argument('-rm','--uninstallmap', help='Uninstall map', action='store'
 parser.add_argument('-s', '--status', help='Displays the WaW Status', action='store_true', dest='status', required=False)
 parser.add_argument('-l', '--list', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
 parser.add_argument('-a', '--addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
-parser.add_argument('-u', '--ui', help='Open UI', action='store_true', dest='open_ui', required=False)
+parser.add_argument('-u', '--ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
 
 args = parser.parse_args()
 
