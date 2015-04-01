@@ -7,6 +7,9 @@ from installs.maps.Survivedabox import Survivedabox
 from installs.maps.PurpleDimension import PurpleDimension
 from installs.maps.ProjectViking import ProjectViking
 from installs.maps.OneWindow import OneWindow
+from installs.maps.Labyrinth import Laybrinth
+from installs.maps.Kfc import Kfc
+from installs.maps.Detained import Detained
 
 class WawManagerApplication(tk.Frame):
     
@@ -34,14 +37,17 @@ class WawManagerApplication(tk.Frame):
 		self.viking = tk.Button(self.master, text="Install Project Viking")
 		self.viking.bind('<ButtonPress>', self.press_viking)
 		## One Window Button
-		self.onewindow = tk.Button(self.master)
+		self.onewindow = tk.Button(self.master, text="Install One Window Challange")
 		self.onewindow.bind('<ButtonPress>', self.press_onewindow)
 		## Labyrinth
-		self.labyrinth = tk.Button(self.master)
+		self.labyrinth = tk.Button(self.master, text="Install Laybrinth")
 		self.labyrinth.bind('<ButtonPress>', self.press_labyrinth)
 		## KFC
-		self.kfc = tk.Button(self.master)
+		self.kfc = tk.Button(self.master, text="Install KFC Zombies")
 		self.kfc.bind('<ButtonPress>', self.press_kfc)
+		## Detained Button
+		self.detained = tk.Button(self.master, text="Install Detained R2")
+		self.detained.bind('<ButtonPress>', self.press_detained)
 		## Output
 		self.output = Text(self.master)
 		self.output.height = 10
@@ -57,6 +63,7 @@ class WawManagerApplication(tk.Frame):
 		self.onewindow.grid(row=6, column=0)
 		self.labyrinth.grid(row=7, column=0)
 		self.kfc.grid(row=8, column=0)
+		self.detained.grid(row=9, column=0)
 		self.output.grid(row=0, column=1, rowspan=1)
 		# self.tmg.pack(side=LEFT, padx=20, pady=20)
 		# self.output.pack(side=RIGHT)
@@ -97,13 +104,16 @@ class WawManagerApplication(tk.Frame):
 		kfc = Kfc('Zombie KFC', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837')
 		kfc.install(self.output)
 
-	def center_window(self):
-		w = 1000
-		h = 1000
+	def press_detained(self, *args):
 
-		sw = self.master.winfo_screenwidth()
-		sh = self.master.winfo_screenheight()
 
-		x = (sw - w)/2
-		y = (sh - h)/2
-		self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+		def center_window(self):
+			w = 1000
+			h = 1000
+
+			sw = self.master.winfo_screenwidth()
+			sh = self.master.winfo_screenheight()
+
+			x = (sw - w)/2
+			y = (sh - h)/2
+			self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))

@@ -21,6 +21,7 @@ from installs.maps.CheeseCube import CheeseCube
 from installs.maps.CheeseCubeUnlimited import CheeseCubeUnlimited
 from installs.maps.BikiniBottom import BikiniBottom
 from installs.maps.Labyrinth import Labyrinth
+from installs.maps.Detained import Detained
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -156,6 +157,10 @@ elif args.arg_mod == 'bikini_bottom':
 elif args.arg_mod == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.install()
+
+elif args.arg_mod == 'detained':
+    detained = Detained('Detained R2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1294')
+    detained.install()
 
 ## Map Removes #########################################################################################################################
 
