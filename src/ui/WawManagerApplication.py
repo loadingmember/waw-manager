@@ -6,6 +6,7 @@ from installs.maps.TMGChristmas import TMGChristmas
 from installs.maps.Survivedabox import Survivedabox
 from installs.maps.PurpleDimension import PurpleDimension
 from installs.maps.ProjectViking import ProjectViking
+from installs.maps.OneWindow import OneWindow
 
 class WawManagerApplication(tk.Frame):
     
@@ -35,6 +36,12 @@ class WawManagerApplication(tk.Frame):
 		## One Window Button
 		self.onewindow = tk.Button(self.master)
 		self.onewindow.bind('<ButtonPress>', self.press_onewindow)
+		## Labyrinth
+		self.labyrinth = tk.Button(self.master)
+		self.labyrinth.bind('<ButtonPress>', self.press_labyrinth)
+		## KFC
+		self.kfc = tk.Button(self.master)
+		self.kfc.bind('<ButtonPress>', self.press_kfc)
 		## Output
 		self.output = Text(self.master)
 		self.output.height = 10
@@ -48,6 +55,8 @@ class WawManagerApplication(tk.Frame):
 		self.purpled.grid(row=4, column=0, rowspan=1)
 		self.viking.grid(row=5, column=0, rowspan=1)
 		self.onewindow.grid(row=6, column=0)
+		self.labyrinth.grid(row=7, column=0)
+		self.kfc.grid(row=8, column=0)
 		self.output.grid(row=0, column=1, rowspan=1)
 		# self.tmg.pack(side=LEFT, padx=20, pady=20)
 		# self.output.pack(side=RIGHT)
@@ -75,6 +84,18 @@ class WawManagerApplication(tk.Frame):
 	def press_viking(self, *args):
 		viking = ProjectViking('Project Viking Beta 1.0.2', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=1620.0')
 		viking.install(self.output)
+
+	def press_onewindow(self, *args):
+		onewindow = OneWindow('One Window Challange', 'http://www.zommods.com/', 'http://www.zommods.com/zm_one-window-challenge/')
+		onewindow.install(self.output)
+
+	def press_labyrinth(self, *args):
+		labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+		labyrinth.install(self.output)
+
+	def press_kfc(self, *args):
+		kfc = Kfc('Zombie KFC', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837')
+		kfc.install(self.output)
 
 	def center_window(self):
 		w = 1000

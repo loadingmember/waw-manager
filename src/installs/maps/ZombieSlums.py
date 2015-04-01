@@ -41,7 +41,7 @@ class ZombieSlums(WawMaps):
 		time.sleep(2)
 		output.insert(END, 'Zombie Slums Successfuly Installed')
 		output.update_idletasks()
-		Slack.send_message('#coding', 'Map Installed through UI; Zombie Slums')
+		Slack.send_message('#coding', 'Map Installed through UI: Zombie Slums')
 
 	def uninstall(self):
 		print('Removing Files/Scripts')
