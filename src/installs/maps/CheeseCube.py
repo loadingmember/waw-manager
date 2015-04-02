@@ -1,19 +1,50 @@
 import time
 from .WawMaps import WawMaps
+from slack.Slack import Slack
 
 class CheeseCube(WawMaps):
 
-    def install(self):
-        print('mapname = ' + self.mapname)
-        print('homepage = ' + self.homepage)
-        print('map_homepage = ' + self.map_homepage)
-        # subprocess.call([C:\\Desktop\Cheese/ Cube/ V1/ by/ ZK.exe])
-        time.sleep(2)
-        print('Installing Files/Scripts')
-        time.sleep(2)
-        print('Creating Images')
-        time.sleep(1)
-        print('Cheese Cube Installed Successfuly')
+    def install(self, output=None):
+        if output == None:
+            print('mapname = ' + self.mapname)
+            print('homepage = ' + self.homepage)
+            print('map_homepage = ' + self.map_homepage)
+            # subprocess.call([C:\\Desktop\Cheese/ Cube/ V1/ by/ ZK.exe])
+            time.sleep(2)
+            print('Installing Files/Scripts')
+            time.sleep(2)
+            print('Creating Images')
+            time.sleep(1)
+            print('Cheese Cube Installed Successfuly')
+            Slack.send_message('#coding', 'Map Installed: Cheese Cube')
+        else:
+            output.delete(1.0, END)
+            output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
+            output.update_idletasks()
+            output.insert(END, 'homepage = ' + self.homepage + '\n')
+            output.update_idletasks()
+            output.insert(END, 'map_homepage = ' + self.map_homepage + '\n')
+            output.update_idletasks()
+            # subprocess.call([C:\\Desktop\Cheese/ Cube/ V1/ by/ ZK.exe])
+            time.sleep(2)
+            output.insert(END, 'Installing Files\n')
+            output.update_idletasks()
+            time.sleep(4)
+            output.insert(END, 'Creating Images\n')
+            output.update_idletasks()
+            time.sleep(2)
+            output.insert(END, 'Background Images\n')
+            output.update_idletasks()
+            time.sleep(2)
+            output.insert(END, 'Installing FX\n')
+            output.update_idletasks()
+            time.sleep(2)
+            output.insert(END, 'Creating Bubble Zombies\n')
+            output.update_idletasks()
+            time.sleep(3)
+            output.insert(END, 'Cheese Cube Successfuly Installed')
+            output.update_idletasks()
+            Slack.send_message('#coding', 'Map Installed through UI: Cheese Cube')
 
     def uninstall(self):
         print('Removing Files/Scripts')

@@ -7,9 +7,10 @@ from installs.maps.Survivedabox import Survivedabox
 from installs.maps.PurpleDimension import PurpleDimension
 from installs.maps.ProjectViking import ProjectViking
 from installs.maps.OneWindow import OneWindow
-from installs.maps.Labyrinth import Laybrinth
+from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Kfc import Kfc
 from installs.maps.Detained import Detained
+from installs.maps.annihilation import annihilation
 
 class WawManagerApplication(tk.Frame):
     
@@ -47,7 +48,7 @@ class WawManagerApplication(tk.Frame):
 		self.kfc.bind('<ButtonPress>', self.press_kfc)
 		## Detained Button
 		self.detained = tk.Button(self.master, text="Install Detained R2")
-		self.detained.bind('<ButtonPress>', self.press_detained)
+		# self.detained.bind('<ButtonPress>', self.press_detained)
 		## Output
 		self.output = Text(self.master)
 		self.output.height = 10
@@ -104,16 +105,16 @@ class WawManagerApplication(tk.Frame):
 		kfc = Kfc('Zombie KFC', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837')
 		kfc.install(self.output)
 
-	def press_detained(self, *args):
+	# def press_detained(self, *args):
 
 
-		def center_window(self):
-			w = 1000
-			h = 1000
+	def center_window(self):
+		w = 1000
+		h = 1000
 
-			sw = self.master.winfo_screenwidth()
-			sh = self.master.winfo_screenheight()
+		sw = self.master.winfo_screenwidth()
+		sh = self.master.winfo_screenheight()
 
-			x = (sw - w)/2
-			y = (sh - h)/2
-			self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+		x = (sw - w)/2
+		y = (sh - h)/2
+		self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))

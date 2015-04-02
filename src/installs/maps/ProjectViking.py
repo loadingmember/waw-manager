@@ -1,51 +1,50 @@
 import time
 from .WawMaps import WawMaps
-from tkinter as tk
+import tkinter as tk
 from tkinter import *
 from slack.Slack import Slack
 
 class ProjectViking(WawMaps):
 
-	def install(self):
-		print('mapname = ' + self.mapname)
-		print('homepage = ' + self.homepage)
-		print('map_homepage = ' + self.map_homepage)
-		## subprocess.call(["c:\\Desktop\ProjectVikingV1.0.2.exe"])
-		print('Installing File/Scripts')
-		time.sleep(2)
-		print('Creating Images')
-		time.sleep(3)
-		print('Setting Weather/FX')
-		time.sleep(2)
-		print('Project Viking Beta 1.0.2 Installed Successfuly')
-		Slack.send_message('#coding', 'Map Installed: Project Viking')
-
-	def install(self,  output):
-		output.delete(1.0, END)
-		output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
-		output.update_idletasks()
-		output.insert(END, 'homepage = ' + self.homepage + '\n')
-		output.update_idletasks()
-		output.insert(END, 'map_homepage = ' + self.map_homepage + '\n')
-		output.update_idletasks()
-		## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
-		time.sleep(2)
-		output.insert(END, 'Installing Files\n')
-		output.update_idletasks()
-		time.sleep(4)
-		output.insert(END, 'Creating Images\n')
-		output.update_idletasks()
-		time.sleep(2)
-		output.insert(END, 'Background Images\n')
-		output.update_idletasks()
-		time.sleep(2)
-		output.insert(END, 'Installing FX\n')
-		output.update_idletasks()
-		time.sleep(2)
-		output.insert(END, 'Project Viking Successfuly Installed')
-		output.update_idletasks()
-		Slack.send_message('#coding', 'Map Installed through UI: Project Viking')
-
+	def install(self, output=None):
+		if output == None:
+			print('mapname = ' + self.mapname)
+			print('homepage = ' + self.homepage)
+			print('map_homepage = ' + self.map_homepage)
+			## subprocess.call(["c:\\Desktop\ProjectVikingV1.0.2.exe"])
+			print('Installing File/Scripts')
+			time.sleep(2)
+			print('Creating Images')
+			time.sleep(3)
+			print('Setting Weather/FX')
+			time.sleep(2)
+			print('Project Viking Beta 1.0.2 Installed Successfuly')
+			Slack.send_message('#coding', 'Map Installed: Project Viking')
+		else:
+			output.delete(1.0, END)
+			output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
+			output.update_idletasks()
+			output.insert(END, 'homepage = ' + self.homepage + '\n')
+			output.update_idletasks()
+			output.insert(END, 'map_homepage = ' + self.map_homepage + '\n')
+			output.update_idletasks()
+			## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
+			time.sleep(2)
+			output.insert(END, 'Installing Files\n')
+			output.update_idletasks()
+			time.sleep(4)
+			output.insert(END, 'Creating Images\n')
+			output.update_idletasks()
+			time.sleep(2)
+			output.insert(END, 'Background Images\n')
+			output.update_idletasks()
+			time.sleep(2)
+			output.insert(END, 'Installing FX\n')
+			output.update_idletasks()
+			time.sleep(2)
+			output.insert(END, 'Project Viking Successfuly Installed')
+			output.update_idletasks()
+			Slack.send_message('#coding', 'Map Installed through UI: Project Viking')
 	def uninstall(self):
 		print('Removing Files/Scripts')
 		time.sleep(2)

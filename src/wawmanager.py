@@ -22,6 +22,8 @@ from installs.maps.CheeseCubeUnlimited import CheeseCubeUnlimited
 from installs.maps.BikiniBottom import BikiniBottom
 from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Detained import Detained
+from installs.maps.Ubahn import Ubahn
+from installs.maps.annihilation import annihilation
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -32,14 +34,14 @@ from installs.mods.ScaretimesScripts import ScaretimesScripts
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.5')
 
-parser.add_argument('-v','--version', help='print(Version', action='version', version='WaW Mod Manager Version 1.3')
-parser.add_argument('-i','--install', help='Install new map', action='store', dest='arg_mod', required=False)
-parser.add_argument('-d', '--desc', help='Shows Description of Specified Map or Mod', action='store', dest='desc_arg_mod', required=False)
-parser.add_argument('-rm','--uninstallmap', help='Uninstall map', action='store', dest='remove_mod_name', required=False)
-parser.add_argument('-s', '--status', help='Displays the WaW Status', action='store_true', dest='status', required=False)
-parser.add_argument('-l', '--list', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
-parser.add_argument('-a', '--addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
-parser.add_argument('-u', '--ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
+parser.add_argument('-version', help='print(Version', action='version', version='WaW Mod Manager Version 1.3')
+parser.add_argument('-install', help='Install new map', action='store', dest='arg_mod', required=False)
+parser.add_argument('-description', help='Shows Description of Specified Map or Mod', action='store', dest='desc_arg_mod', required=False)
+parser.add_argument('-removemap', help='Uninstall map', action='store', dest='remove_mod_name', required=False)
+parser.add_argument('-status', help='Displays the WaW Status', action='store_true', dest='status', required=False)
+parser.add_argument('-list', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
+parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
+parser.add_argument('-ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
 
 args = parser.parse_args()
 
@@ -162,6 +164,14 @@ elif args.arg_mod == 'detained':
     detained = Detained('Detained R2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1294')
     detained.install()
 
+elif args.arg_mod == 'zombie_ubahn':
+    ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
+    ubahn.install()
+
+elif args.arg_mod == 'annihilation':
+    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+    annihilation.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -235,6 +245,15 @@ elif args.remove_mod_name == 'bikini_bottom':
 elif args.remove_mod_name == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.uninstall()
+
+elif args.remove_mod_name == 'zombie_ubahn':
+    ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
+    ubahn.uninstall()
+
+elif args.remove_mod_name == 'annihilation':
+    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+    annihilation.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -288,6 +307,14 @@ elif args.desc_arg_mod == 'bikini_bottom':
 elif args.desc_arg_mod == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.description()
+
+elif args.desc_arg_mod == 'zombie_ubahn':
+    ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
+    ubahn.description()
+
+elif args.desc_arg_mod == 'annihilation':
+    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+    annihilation.description()
 
 ## Mod Descriptions ##############################################################################################
 
