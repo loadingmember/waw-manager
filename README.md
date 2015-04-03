@@ -77,3 +77,4 @@ WaW Mod Manager 1.5 - Sixth Update
 - New Command: Status
 
 - New Command: List
+

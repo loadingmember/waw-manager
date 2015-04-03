@@ -24,13 +24,12 @@ from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Detained import Detained
 from installs.maps.Ubahn import Ubahn
 from installs.maps.annihilation import annihilation
+from installs.maps.Deadship import Deadship
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
 from installs.mods.BlackopsWeapons import BlackopsWeapons
 from installs.mods.ScaretimesScripts import ScaretimesScripts
-
-
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.5')
 
@@ -172,6 +171,10 @@ elif args.arg_mod == 'annihilation':
     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
     annihilation.install()
 
+elif args.arg_mod == 'dead_ship':
+    dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
+    dead_ship.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -254,6 +257,10 @@ elif args.remove_mod_name == 'annihilation':
     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
     annihilation.uninstall()
 
+elif args.remove_mod_name == 'dead_ship':
+    dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
+    dead_ship.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -315,6 +322,10 @@ elif args.desc_arg_mod == 'zombie_ubahn':
 elif args.desc_arg_mod == 'annihilation':
     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
     annihilation.description()
+
+elif args.desc_arg_mod == 'dead_ship':
+    dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
+    dead_ship.description()
 
 ## Mod Descriptions ##############################################################################################
 
