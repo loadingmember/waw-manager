@@ -78,3 +78,12 @@ WaW Mod Manager 1.5 - Sixth Update
 
 - New Command: List
 
+WaW Mod Manager 1.6 (LATEST) - Seventh Update=
+
+- Lots of New Maps: Bikini Bottom Zombies, Dead Ship, Detained, and More
+
+- Open World at War Command Coming Soon
+
+- New User Interface
+
+- Much More...
