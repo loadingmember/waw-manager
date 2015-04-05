@@ -10,6 +10,7 @@ class Familyguy(WawMaps):
 			print('homepage = ' + self.homepage)
 			print('map_homepage = ' + self.map_homepage)
 			print('Installing Files/Scripts')
+			## subprocess.call([C:\\Desktop\nzai_zombie_familyguy.exe])
 			time.sleep(2)
 			print('Creating Ported Weapons')
 			time.sleep(2)
@@ -60,3 +61,4 @@ class Familyguy(WawMaps):
 		print('- Teleporters')
 		print('- Custom Mystery Box Prefab')
 		print('- Custom Perk')
+		print('- Custom Wonder Weapons')

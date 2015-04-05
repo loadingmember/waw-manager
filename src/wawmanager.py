@@ -7,6 +7,7 @@ import tkinter as tk
 import sys, os
 from Status import Status
 from List import List
+from Themes import Themes
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -26,6 +27,7 @@ from installs.maps.Ubahn import Ubahn
 from installs.maps.annihilation import annihilation
 from installs.maps.Deadship import Deadship
 from installs.maps.Familyguy import Familyguy
+from installs.maps.Christmaswarehouse import Christmaswarehouse
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -42,6 +44,7 @@ parser.add_argument('-status', help='Displays the WaW Status', action='store_tru
 parser.add_argument('-list', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
 parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
 parser.add_argument('-ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
+parser.add_argument('-theme', help='Changes Theme', action='store', dest='arg_theme', required=False)
 
 args = parser.parse_args()
 
@@ -51,6 +54,20 @@ if args.open_ui:
     # root.tk.call('wm', 'iconphoto', root._w, img)
     app = WawManagerApplication(master=root)
     app.mainloop()
+
+if args.arg_theme == 'Default':
+    Themes.set_theme('Default')
+    print('Theme = Default')
+elif args.arg_theme == 'Cheese Cube':
+    print('Theme = Cheese Cube')
+    Themes.set_theme('Cheese Cube')
+elif args.arg_theme == 'Christmas Warehouse':
+    print('Theme = Christmas Warehouse')
+    Theme.set_theme('Christmas Warehouse')
+elif args.arg_theme == 'Steam':
+    print('Theme = Steam')
+    Theme.set_theme('Steam')
+
 
 ## Prints the user_map_name
 if args.user_map_name:
@@ -180,6 +197,10 @@ elif args.arg_mod == 'family_guy_zombies':
     family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
     family_guy.install()
 
+elif args.arg_mod == 'christmas_warehouse':
+    christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
+    christmas_warehouse.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -270,6 +291,10 @@ elif args.arg_mod == 'family_guy_zombies':
     family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
     family_guy.uninstall()
 
+elif args.arg_mod == 'christmas_warehouse':
+    christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
+    christmas_warehouse.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -339,6 +364,10 @@ elif args.desc_arg_mod == 'dead_ship':
 elif args.desc_arg_mod == 'family_guy_zombies':
     family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
     family_guy.description()
+
+elif args.desc_arg_mod == 'christmas_warehouse':
+    christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
+    christmas_warehouse.uninstall()
 
 ## Mod Descriptions ##############################################################################################
 
