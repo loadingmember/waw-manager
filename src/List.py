@@ -22,3 +22,7 @@ class List():
 		print('black_ops_perks')
 		print('black_ops_weapons')
 		print('scaretimes_scripts')
+		print('')
+		print('Store Items:')
+		print('More Maps - $2.99')
+		print('Premium - $9.99- All Maps, Uninstall and Description from UI, Better UI')

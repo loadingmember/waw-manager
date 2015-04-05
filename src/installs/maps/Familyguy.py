@@ -1,23 +1,24 @@
 import time
 from .WawMaps import WawMaps
-import tkinter as tk
-from tkinter import *
 from slack.Slack import Slack
 
-class OneWindow(WawMaps):
+class Familyguy(WawMaps):
 
 	def install(self, output=None):
 		if output == None:
 			print('mapname = ' + self.mapname)
 			print('homepage = ' + self.homepage)
 			print('map_homepage = ' + self.map_homepage)
-			## subprocess.call(["c:\\Desktop\zm_owc.exe"])
-			print('Installing File/Scripts')
+			print('Installing Files/Scripts')
 			time.sleep(2)
-			print('Creating Box')
+			print('Creating Ported Weapons')
 			time.sleep(2)
-			print('One Window Challange Installed Succesfully')
-			Slack.send_message('#coding', 'Map installed: One Window Challange')
+			print('Creating Gas Pump Prefabs')
+			time.sleep(2)
+			print('Finishing Up...')
+			time.sleep(2)
+			print('Family Guy Zombies Successfuly Installed')
+			Slack.send_message('#coding', 'Map Installed: Family Guy Zombies')
 		else:
 			output.delete(1.0, END)
 			output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
@@ -27,30 +28,35 @@ class OneWindow(WawMaps):
 			output.insert(END, 'map_homepage = ' + self.map_homepage + '\n')
 			output.update_idletasks()
 			## subprocess.call(["c:\\Desktop\Zombie/ Cargo.exe"])
-			time.sleep(2)
-			output.insert(END, 'Installing Files\n')
+			output.insert(END, 'Installing Files/Scripts\n')
 			output.update_idletasks()
 			time.sleep(2)
-			output.insert(END, 'Creating Box\n')
+			output.insert(END, 'Creating Ported Weapons\n')
 			output.update_idletasks()
 			time.sleep(2)
-			output.insert(END, 'One Window Challange Successfuly Installed')
+			output.insert(END, 'Creating Gas Pump Prefabs\n')
 			output.update_idletasks()
-			Slack.send_message('#coding', 'Map Installed through UI: One Window Challange')
+			time.sleep(2)
+			output.insert(END, 'Family Guy Zombies Successfuly Installed')
+			output.update_idletasks()
+			Slack.send_message('#coding', 'Map Installed through UI: Family Guy Zombies')
 
 	def uninstall(self):
+		print('mapname  = ' + self.mapname)
 		print('Removing Files/Scripts')
 		time.sleep(2)
-		print('One Window Challange Uninstalled with No Errors')
+		print('Removing Ported Weapons')
+		time.sleep(2)
+		print('Removing Gas Pump Prefabs')
+		time.sleep(2)
+		print('Family Guy Zombies Uninstalled with No Errors')
 
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)
 		print('map_homepage = ' + self.map_homepage)
-		print('- Black Ops Weapons')
-		print('- Black Ops Perks')
-		print('- Buyable Powerups')
-		print('- Box Map')
-		print('- Custom Window Defense Script')
-		print('- One Window')
-		print('- Pack a Punch')
+		print('- Gas Pump Perk Prefabs')
+		print('- Custom Zombie Models')
+		print('- Teleporters')
+		print('- Custom Mystery Box Prefab')
+		print('- Custom Perk')

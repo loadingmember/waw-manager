@@ -25,6 +25,7 @@ from installs.maps.Detained import Detained
 from installs.maps.Ubahn import Ubahn
 from installs.maps.annihilation import annihilation
 from installs.maps.Deadship import Deadship
+from installs.maps.Familyguy import Familyguy
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -175,6 +176,10 @@ elif args.arg_mod == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
     dead_ship.install()
 
+elif args.arg_mod == 'family_guy_zombies':
+    family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
+    family_guy.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -261,6 +266,10 @@ elif args.remove_mod_name == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
     dead_ship.uninstall()
 
+elif args.arg_mod == 'family_guy_zombies':
+    family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
+    family_guy.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -326,6 +335,10 @@ elif args.desc_arg_mod == 'annihilation':
 elif args.desc_arg_mod == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
     dead_ship.description()
+
+elif args.desc_arg_mod == 'family_guy_zombies':
+    family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
+    family_guy.description()
 
 ## Mod Descriptions ##############################################################################################
 
