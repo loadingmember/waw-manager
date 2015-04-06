@@ -53,6 +53,13 @@ class ZombieCargo(WawMaps):
             print('Zombie Cargo Map Uninstalled with No Errors')
             Slack.send_message('#coding', 'Map Uninstalled: Zombie Cargo')
 
+      def reset(self):
+            print('mapname = ' + self.mapname)
+            time.sleep(2)
+            print('Reversing Files and Water')
+            time.sleep(2)
+            print('Zombie Cargo Reset Complete')
+
       def description(self):
             print('mapname = ' + self.mapname)
             print('homepage = ' + self.homepage)

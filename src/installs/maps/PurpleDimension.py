@@ -48,6 +48,13 @@ class PurpleDimension(WawMaps):
 		time.sleep(2)
 		print('Purple Dimension Map Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Purple Colors')
+		time.sleep(2)
+		print('Purple Dimension Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

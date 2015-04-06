@@ -64,6 +64,13 @@ class Christmaswarehouse(WawMaps):
 		time.sleep(2)
 		print('Christmas Warehouse Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Prefabs')
+		time.sleep(2)
+		print('Christmas Warehouse Reset Completed')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

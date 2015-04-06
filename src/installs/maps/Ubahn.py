@@ -54,6 +54,13 @@ class Ubahn(WawMaps):
 			time.sleep(2)
 			print('Zombie Ubahn Uninstalled with No Errors')
 
+		def reset(self):
+			print('mapname = ' + self.mapname)
+			time.sleep(2)
+			print('Reversing Files and Subway')
+			time.sleep(2)
+			print('Zombie Ubahn Reset Complete')
+
 		def description(self):
 			print('mapname = ' + self.mapname)
 			print('homepage = ' + self.homepage)

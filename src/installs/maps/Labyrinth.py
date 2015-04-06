@@ -55,6 +55,13 @@ class Labyrinth(WawMaps):
 		time.sleep(2)
 		print('Labyrinth 1.2 Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Prefabs')
+		time.sleep(2)
+		print('Laybrinth Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

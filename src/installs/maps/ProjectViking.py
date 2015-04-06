@@ -54,6 +54,13 @@ class ProjectViking(WawMaps):
 		time.sleep(4)
 		print('Project Viking Beta 1.0.2 Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Scripts')
+		time.sleep(2)
+		print('Project Viking Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

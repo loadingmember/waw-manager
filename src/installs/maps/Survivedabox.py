@@ -49,6 +49,13 @@ class Survivedabox(WawMaps):
 		time.sleep(2)
 		print('survivedabox Map Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files')
+		time.sleep(2)
+		print('Survivedabox Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

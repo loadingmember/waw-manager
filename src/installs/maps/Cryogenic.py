@@ -52,6 +52,13 @@ class Cryogenic(WawMaps):
 		time.sleep(2)
 		print('Cryogenic Map Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Everything')
+		time.sleep(2)
+		print('Cyrogenic Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

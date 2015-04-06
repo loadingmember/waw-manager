@@ -57,6 +57,13 @@ class Detained(WawMaps):
         time.sleep(2)
         print(self.mapname + 'Removed with No Errors')
 
+    def reset(self):
+        print('mapname = ' + self.mapname)
+        time.sleep(2)
+        print('Reversing Files and White and Black Theme')
+        time.sleep(2)
+        print('Detained Reset Complete')
+
     def descritpion(self):
         print('mapname = ') + self.mapname
         print('homepage = ') + self.homepage

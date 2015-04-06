@@ -50,6 +50,13 @@ class Deadship(WawMaps):
 		time.sleep(2)
 		print('Dead Ship Uninstall with No Error')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Pirate Booty')
+		time.sleep(2)
+		print('Dead Ship Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

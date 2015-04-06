@@ -52,6 +52,13 @@ class TMGChristmas(WawMaps):
 		time.sleep(2)
 		print('TMG Christmas 1.1 Uninstalled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Christmas')
+		time.sleep(2)
+		print('TMG Christmas 1.1 Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

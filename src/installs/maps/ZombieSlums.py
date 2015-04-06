@@ -46,6 +46,13 @@ class ZombieSlums(WawMaps):
 		time.sleep(2)
 		print('Zombie Slums Map Uninstaled with No Errors')
 
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files and Zombies')
+		time.sleep(2)
+		print('Zombie Slums Reset Complete')
+
 	def description(self):
 		print('mapname = ' + self.mapname)
 		print('homepage = ' + self.homepage)

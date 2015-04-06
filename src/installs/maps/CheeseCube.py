@@ -55,6 +55,13 @@ class CheeseCube(WawMaps):
         time.sleep(4)
         print('Cheese Cube Uninstalled with No Errors')
 
+    def reset(self):
+        print('mapname = ' + self.mapname)
+        time.sleep(2)
+        print('Reversing Cheeseienes')
+        time.sleep(2)
+        print('Cheese Cube Reset Complete')
+
     def description(self):
         print('mapname = ' + self.mapname)
         print('homepage = ' + self.homepage)

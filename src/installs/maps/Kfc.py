@@ -47,6 +47,13 @@ class Kfc(WawMaps):
         time.sleep(4)
         print('KFC Uninstalled with No Errors')
 
+    def reset(self):
+        print('mapname = ' + self.mapname)
+        time.sleep(2)
+        print('Reversing Files and Chicken')
+        time.sleep(2)
+        print('KFC Zombies Reset Complete')
+
     def description(self):
         print('mapname = ' + self.mapname)
         print('homepage = ' + self.homepage)

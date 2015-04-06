@@ -26,7 +26,7 @@ from installs.maps.BikiniBottom import BikiniBottom
 from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Detained import Detained
 from installs.maps.Ubahn import Ubahn
-from installs.maps.annihilation import annihilation
+from installs.maps.Annihilation import Annihilation
 from installs.maps.Deadship import Deadship
 from installs.maps.Familyguy import Familyguy
 from installs.maps.Christmaswarehouse import Christmaswarehouse
@@ -61,11 +61,67 @@ if args.open_ui:
 ## Reset Command
 
 if args.reset:
-    annihilation.uninstall()
-    bikini_bottom.uninstall()
-    cheese_cube.uninstall()
-    cheese_cube_unlimited.uninstall()
-    christmas_warehouse.uninstall()
+    ## Anihilation Reset
+    annihilation = Annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+    annihilation.reset()
+    ## Bikini Bottom Reset
+    bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
+    bikini_bottom.reset()
+    ## Cheese Cube Reset
+    cheese_cube = CheeseCube('Cheese Cube by ZK', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
+    cheese_cube.reset()
+    ## Cheese Cube Unlimited Reset
+    cheese_cube_unlimited = CheeseCubeUnlimited('Cheese Cube Unlimited by ZK', 'http://www.ugx-mods.com/', 'http://ugx-mods.com/forum/index.php?topic=2973.0')
+    cheese_cube_unlimited.reset()
+    ## Christmas Warehouse Reset
+    christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
+    christmas_warehouse.reset()
+    ## Cyrogenic Reset
+    cryogenic = Cryogenic('Cryogenic', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5860.0')
+    cryogenic.reset()
+    ## Dead Ship Reset
+    dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
+    dead_ship.reset()
+    ## Detained Reset
+    detained = Detained('Detained R2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1294')
+    detained.reset()
+    ## Family Guy Zombies Reset
+    family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
+    family_guy.reset()
+    ## KFC Zombies Reset
+    kfc = Kfc('Zombie KFC', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837')
+    kfc.reset()
+    ## Labyrinth Reset
+    labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
+    labyrinth.reset()
+    ## One Window Challange Reset
+    one_window = OneWindow('One Window Challange', 'http://www.zommods.com/', 'http://www.zommods.com/zm_one-window-challenge/')
+    one_window.reset()
+    ## Project Viking Reset
+    project_viking = ProjectViking('Project Viking Beta 1.0.2', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=1620.0')
+    project_viking.reset()
+    ## Purple Dimension Reset
+    purple_dimension = PurpleDimension('Purple Dimension', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771')
+    purple_dimension.reset()
+    ## Survivedabox Reset
+    survivedabox = Survivedabox('survivedabox', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819')
+    survivedabox.reset()
+    ## TMG Reset
+    tmg_christmas = TMGChristmas('TMG Christmas 1.1', 'http://www.zommods.com', 'http://zommods.com/tmg-christmas/')
+    tmg_christmas.reset()
+    ## Ubahn Reset
+    ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
+    ubahn.reset()
+    ## Zombie Cargo Reset
+    zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')
+    zombie_cargo.reset()
+    ## Zombie Slums Reset
+    zombie_slums = ZombieSlums('Zombie Slums', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661')
+    zombie_slums.reset()
+    ## Default Theme Reset
+    default = Default('Default Theme', 'Default', 'Default', 'Default')
+    default.set_theme()
+
 
 ## Prints the user_map_name
 if args.user_map_name:
@@ -399,13 +455,6 @@ elif args.arg_theme == 'cheese_cube_theme':
     cheese_cube = Cheesecube('Cheese Cube Theme', 'Cheese Cube Scheme', 'Yellow', 'Default')
     cheese_cube.set_theme()
 
-elif ars.arg_theme == 'steam_theme':
+elif args.arg_theme == 'steam_theme':
     steam_theme = Steamtheme('Steam Theme', 'Steam Color Scheme', 'Black/Blue', 'Steam')
     steam_theme.set_theme()
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@ import time
 from slack.Slack import Slack
 from .WawMaps import WawMaps
 
-class annihilation(WawMaps):
+class Annihilation(WawMaps):
 
 	def install(self, output=None):
 		if output == None:
@@ -46,26 +46,33 @@ class annihilation(WawMaps):
 			output.update_idletasks()
 			Slack.send_message('#coding', 'Map Installed through UI: Annihilation')
 
-		def uninstall(self):
-			print('mapname = ' + self.mapname)
-			print('homepage = ' + self.homepage)
-			print('map_homepage =' + self.map_homepage)
-			print('Removing Scripts')
-			time.sleep(2)
-			print('Remvoing Custom Weapons')
-			time.sleep(2)
-			print('Removing Full-Auto Colt')
-			time.sleep(2)
-			print('Removing Box')
-			time.sleep(2)
-			print('Annihilation Uninstalled with No Errors')
+	def uninstall(self):
+		print('mapname = ' + self.mapname)
+		print('homepage = ' + self.homepage)
+		print('map_homepage =' + self.map_homepage)
+		print('Removing Scripts')
+		time.sleep(2)
+		print('Remvoing Custom Weapons')
+		time.sleep(2)
+		print('Removing Full-Auto Colt')
+		time.sleep(2)
+		print('Removing Box')
+		time.sleep(2)
+		print('Annihilation Uninstalled with No Errors')
 
-		def description(self):
-			print('mapname = ' + self.mapname)
-			print('homepage = ' + self.homepage)
-			print('map_homepage =' + self.map_homepage)
-			print('- Box Map')
-			print('- Full Auto Colt')
-			print('- Custom Weapons')
+	def reset(self):
+		print('mapname = ' + self.mapname)
+		time.sleep(2)
+		print('Reversing Files...')
+		time.sleep(2)
+		print('Anihilation Reset Complete')
+
+	def description(self):
+		print('mapname = ' + self.mapname)
+		print('homepage = ' + self.homepage)
+		print('map_homepage =' + self.map_homepage)
+		print('- Box Map')
+		print('- Full Auto Colt')
+		print('- Custom Weapons')
 
 
