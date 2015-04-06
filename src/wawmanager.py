@@ -7,7 +7,9 @@ import tkinter as tk
 import sys, os
 from Status import Status
 from List import List
-from Themes import Themes
+from installs.Themes.Default import Default
+from installs.Themes.Cheesecube import Cheesecube
+from installs.Themes.Steamtheme import Steamtheme
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -45,6 +47,7 @@ parser.add_argument('-list', help='Show a List of Installable Maps and Mods', ac
 parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
 parser.add_argument('-ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
 parser.add_argument('-theme', help='Changes Theme', action='store', dest='arg_theme', required=False)
+parser.add_argument('-reset', help='Resets all settings and uninstalls all maps', action='store_true', dest='reset', required=False)
 
 args = parser.parse_args()
 
@@ -55,19 +58,14 @@ if args.open_ui:
     app = WawManagerApplication(master=root)
     app.mainloop()
 
-if args.arg_theme == 'Default':
-    Themes.set_theme('Default')
-    print('Theme = Default')
-elif args.arg_theme == 'Cheese Cube':
-    print('Theme = Cheese Cube')
-    Themes.set_theme('Cheese Cube')
-elif args.arg_theme == 'Christmas Warehouse':
-    print('Theme = Christmas Warehouse')
-    Theme.set_theme('Christmas Warehouse')
-elif args.arg_theme == 'Steam':
-    print('Theme = Steam')
-    Theme.set_theme('Steam')
+## Reset Command
 
+if args.reset:
+    annihilation.uninstall()
+    bikini_bottom.uninstall()
+    cheese_cube.uninstall()
+    cheese_cube_unlimited.uninstall()
+    christmas_warehouse.uninstall()
 
 ## Prints the user_map_name
 if args.user_map_name:
@@ -390,6 +388,20 @@ elif args.desc_arg_mod == 'ugx_mod_1_0_4':
 elif args.desc_arg_mod == 'waw_modtools':
     wawmodtools = WawModtools('WaW Modtools', 'http://www.callofduty.gamefront.com/', 'http://callofduty.filefront.com/file/;95890')
     wawmodtools.description()
+
+## Themes ###########################################################################
+
+if args.arg_theme == 'default':
+    default = Default('Default Theme', 'Default', 'Default', 'Default')
+    default.set_theme()
+
+elif args.arg_theme == 'cheese_cube_theme':
+    cheese_cube = Cheesecube('Cheese Cube Theme', 'Cheese Cube Scheme', 'Yellow', 'Default')
+    cheese_cube.set_theme()
+
+elif ars.arg_theme == 'steam_theme':
+    steam_theme = Steamtheme('Steam Theme', 'Steam Color Scheme', 'Black/Blue', 'Steam')
+    steam_theme.set_theme()
 
 
 
