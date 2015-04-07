@@ -1,17 +1,17 @@
-import time
 from .BaseTheme import BaseTheme
+import time
 
-class Steamtheme(BaseTheme):
+class Cheesecubetheme(BaseTheme):
 
 	def install(self):
 		print('theme_name = ' + self.theme_name)
-		print('Getting Background Colors: Blue')
+		print('Getting Background Colors')
 		time.sleep(2)
-		print('Creating Color Scheme')
+		print('Creating Custom Color Scheme')
 		time.sleep(2)
-		print('Creating Font')
+		print('Get Font')
 		time.sleep(2)
-		print('Steam Theme now installed. Use "wawmanager -theme steam_theme", to enable')
+		print('Cheese Cube Theme Successfuly Installed')
 
 	def set_theme(self):
 		print('color_scheme = ' + self.color_scheme)
@@ -19,4 +19,4 @@ class Steamtheme(BaseTheme):
 		print('font = ' + self.font)
 		print('theme_name = ' + self.theme_name)
 		time.sleep(2)
-		print('Theme set to Steam Theme. Please Restart for the Theme to Apply')
+		print('Theme set to Cheese Cube. Please Restart for the Theme to Apply')

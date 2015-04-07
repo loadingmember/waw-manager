@@ -8,8 +8,9 @@ import sys, os
 from Status import Status
 from List import List
 from installs.Themes.Default import Default
-from installs.Themes.Cheesecube import Cheesecube
+from installs.Themes.Cheesecubetheme import Cheesecubetheme
 from installs.Themes.Steamtheme import Steamtheme
+from installs.Themes.Christmaswarehousetheme import Christmaswarehousetheme
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -61,6 +62,8 @@ if args.open_ui:
 ## Reset Command
 
 if args.reset:
+    print('Preparing...')
+    time.sleep(2)
     ## Anihilation Reset
     annihilation = Annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
     annihilation.reset()
@@ -254,6 +257,21 @@ elif args.arg_mod == 'family_guy_zombies':
 elif args.arg_mod == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.install()
+
+## Theme Installs ###################################################################################################################################
+
+    ## Cheese Cube Theme Install
+elif args.arg_mod == 'cheese_cube_theme':
+    cheese_cube_theme = Cheesecubetheme('Cheese Cube Theme', 'Cheese Cube Scheme', 'Yellow', 'Default')
+    cheese_cube_theme.install()
+
+elif args.arg_mod == 'steam_theme':
+    steam_theme = Steamtheme('Steam Theme', 'Steam Color Scheme', 'Black/Blue', 'Steam')
+    steam_theme.install()
+
+elif args.arg_mod == 'christmas_warehouse_theme':
+    christmas_warehouse_theme = Christmaswarehousetheme('Christmas Warehouse Theme', 'Christmas Theme Color Scheme', 'Green/Red', 'Comic Sans MS')
+    christmas_warehouse_theme.install()
 
 ## Map Removes #########################################################################################################################
 
@@ -452,9 +470,13 @@ if args.arg_theme == 'default':
     default.set_theme()
 
 elif args.arg_theme == 'cheese_cube_theme':
-    cheese_cube = Cheesecube('Cheese Cube Theme', 'Cheese Cube Scheme', 'Yellow', 'Default')
-    cheese_cube.set_theme()
+    cheese_cube_theme = Cheesecubetheme('Cheese Cube Theme', 'Cheese Cube Scheme', 'Yellow', 'Default')
+    cheese_cube_theme.set_theme()
 
 elif args.arg_theme == 'steam_theme':
     steam_theme = Steamtheme('Steam Theme', 'Steam Color Scheme', 'Black/Blue', 'Steam')
     steam_theme.set_theme()
+
+elif args.arg_theme == 'christmas_warehouse_theme':
+    christmas_warehouse_theme = Christmaswarehousetheme('Christmas Warehouse Theme', 'Christmas Theme Color Scheme', 'Green/Red', 'Comic Sans MS')
+    christmas_warehouse_theme.set_theme()
