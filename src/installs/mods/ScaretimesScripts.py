@@ -8,7 +8,7 @@ class ScaretimesScripts(WawMods):
 		print('homepage = ' + self.homepage)
 		print('mod_homepage = ' + self.mod_homepage)
 		print('WARNING: IT IS NOT OUR FAULT IF YOU DO NOT BACK UP YOUR ROOT')
-		raw_input("Press Enter to Continue: ")
+		input("Press Enter to Continue: ")
 		print('Copying Files to Root')
 		time.sleep(3)
 		print('Copying Scripts')

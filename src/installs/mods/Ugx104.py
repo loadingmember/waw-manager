@@ -10,7 +10,7 @@ class Ugx104(WawMods):
 		print('Copying Files to Root Directory')
 		time.sleep(2)
 		print('WARNING: IT IS NOT OUR FAULT IF YOU DO NOT BACK UP YOUR ROOT!')
-		raw_input("Press Enter to Continue: ")
+		input("Press Enter to Continue: ")
 		time.sleep(3)
 		print('UGX Mod Version 1.0.4 Installed')
 

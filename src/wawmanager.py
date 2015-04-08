@@ -7,10 +7,12 @@ import tkinter as tk
 import sys, os
 from Status import Status
 from List import List
+from Keygenerator import Keygenerator
 from installs.Themes.Default import Default
 from installs.Themes.Cheesecubetheme import Cheesecubetheme
 from installs.Themes.Steamtheme import Steamtheme
 from installs.Themes.Christmaswarehousetheme import Christmaswarehousetheme
+from installs.Themes.Xboxtheme import Xboxtheme
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -49,6 +51,7 @@ parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='u
 parser.add_argument('-ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
 parser.add_argument('-theme', help='Changes Theme', action='store', dest='arg_theme', required=False)
 parser.add_argument('-reset', help='Resets all settings and uninstalls all maps', action='store_true', dest='reset', required=False)
+parser.add_argument('-key', help='blah', action='store_true', dest='key', required=False)
 
 args = parser.parse_args()
 
@@ -58,6 +61,12 @@ if args.open_ui:
     # root.tk.call('wm', 'iconphoto', root._w, img)
     app = WawManagerApplication(master=root)
     app.mainloop()
+
+## Key Generator
+
+if args.key:
+    key = Keygenerator()
+    key.gen_key()
 
 ## Reset Command
 
@@ -273,6 +282,10 @@ elif args.arg_mod == 'christmas_warehouse_theme':
     christmas_warehouse_theme = Christmaswarehousetheme('Christmas Warehouse Theme', 'Christmas Theme Color Scheme', 'Green/Red', 'Comic Sans MS')
     christmas_warehouse_theme.install()
 
+elif args.arg_mod == 'xbox_theme':
+    xbox_theme = Xboxtheme('Xbox 360 Theme', 'Xbox 360 Color Scheme', 'Grey', 'Xbox Font')
+    xbox_theme.install()
+
 ## Map Removes #########################################################################################################################
 
 elif args.remove_mod_name == 'zombie_cargo':
@@ -480,3 +493,7 @@ elif args.arg_theme == 'steam_theme':
 elif args.arg_theme == 'christmas_warehouse_theme':
     christmas_warehouse_theme = Christmaswarehousetheme('Christmas Warehouse Theme', 'Christmas Theme Color Scheme', 'Green/Red', 'Comic Sans MS')
     christmas_warehouse_theme.set_theme()
+
+elif args.arg_theme == 'xbox_theme':
+    xbox_theme = Xboxtheme('Xbox 360 Theme', 'Xbox 360 Color Scheme', 'Grey', 'Xbox Font')
+    xbox_theme.set_theme()

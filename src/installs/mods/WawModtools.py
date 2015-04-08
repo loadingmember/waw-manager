@@ -11,7 +11,7 @@ class WawModtools(WawMods):
 		print('Copying Files')
 		time.sleep(1)
 		print('WARNING: IT IS NOT OUR FAULT IF YOU DO NOT BACKUP YOUR ROOT!')
-		raw_input("Press Enter to Continue: ")
+		input("Press Enter to Continue: ")
 		print('Installing Lanuncher. Completed')
 		time.sleep(2)
 		print('Installing Script Placer. Completed')

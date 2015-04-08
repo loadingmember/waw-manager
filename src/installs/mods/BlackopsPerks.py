@@ -8,7 +8,7 @@ class BlackopsPerks(WawMods):
 		print('homepage = ' + self.homepage)
 		print('mod_homepage = ' + self.mod_homepage)
 		print('WARNING: IT IS NOT OUR FAULT IF YOU DO NOT BACKUP YOUR ROOT!')
-		raw_input("Press Enter to Continue: ")
+		input("Press Enter to Continue: ")
 		time.sleep(2)
 		print('Copying Files')
 		time.sleep(2)
