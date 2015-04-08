@@ -7,12 +7,13 @@ import tkinter as tk
 import sys, os
 from Status import Status
 from List import List
-from KeyGenerator import KeyGenerator
+from Keygenerator import Keygenerator
 from installs.Themes.Default import Default
 from installs.Themes.Cheesecubetheme import Cheesecubetheme
 from installs.Themes.Steamtheme import Steamtheme
 from installs.Themes.Christmaswarehousetheme import Christmaswarehousetheme
 from installs.Themes.Xboxtheme import Xboxtheme
+from installs.Themes.Playstationtheme import Playstationtheme
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -33,11 +34,13 @@ from installs.maps.Annihilation import Annihilation
 from installs.maps.Deadship import Deadship
 from installs.maps.Familyguy import Familyguy
 from installs.maps.Christmaswarehouse import Christmaswarehouse
+from installs.maps.Zombiebridge import Zombiebridge
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
 from installs.mods.BlackopsWeapons import BlackopsWeapons
 from installs.mods.ScaretimesScripts import ScaretimesScripts
+from installs.mods.CModernweapons import CModernweapons  
 
 parser = argparse.ArgumentParser(description='World at War Mod Manager 1.5')
 
@@ -65,8 +68,9 @@ if args.open_ui:
 ## Key Generator
 
 if args.key:
-    key = KeyGenerator()
+    key = Keygenerator()
     print(key.generate())
+    print('There is your purchase code. Please visit our website at www.wawmanager.com, and enter in the code for the download')
 
 ## Reset Command
 
@@ -166,6 +170,10 @@ elif args.arg_mod == 'black_ops_weapons':
 elif args.arg_mod == 'scaretimes_scripts':
     scaretimes_scripts = ScaretimesScripts('Scaretimes Scripts and Prefabs', 'None', 'None')
     scaretimes_scripts.install()
+
+elif args.arg_mod == 'cmodern_weapons':
+    cmodern_weapons = CModernweapons('Combat Moduler Weapons', 'http://www.gamewatcher.com', 'http://www.gamewatcher.com/mods/call-of-duty-world-at-war-mod/nazi-zombie-special-combat-modern-weapons-mod-1-0')
+    cmodern_weapons.install()
 
 ## Map Installs Below
 
@@ -267,6 +275,10 @@ elif args.arg_mod == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.install()
 
+elif args.arg_mod == 'zombie_bridge1.6':
+    zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
+    zombie_bridge.install()
+
 ## Theme Installs ###################################################################################################################################
 
     ## Cheese Cube Theme Install
@@ -285,6 +297,10 @@ elif args.arg_mod == 'christmas_warehouse_theme':
 elif args.arg_mod == 'xbox_theme':
     xbox_theme = Xboxtheme('Xbox 360 Theme', 'Xbox 360 Color Scheme', 'Grey', 'Xbox Font')
     xbox_theme.install()
+
+elif args.arg_mod == 'playstation_theme':
+    playstation_theme = Playstationtheme('Playstation Theme', 'Playstation Color Scheme', 'Blue', 'Playstation Font')
+    playstation_theme.install()
 
 ## Map Removes #########################################################################################################################
 
@@ -380,6 +396,10 @@ elif args.arg_mod == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.uninstall()
 
+elif args.arg_mod == 'zombie_bridge':
+    zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
+    zombie_bridge.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -454,6 +474,10 @@ elif args.desc_arg_mod == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.uninstall()
 
+elif args.desc_arg_mod == 'zombie_bridge':
+    zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
+    zombie_bridge.uninstall()
+
 ## Mod Descriptions ##############################################################################################
 
 if args.desc_arg_mod == 'black_ops_perks':
@@ -476,6 +500,10 @@ elif args.desc_arg_mod == 'waw_modtools':
     wawmodtools = WawModtools('WaW Modtools', 'http://www.callofduty.gamefront.com/', 'http://callofduty.filefront.com/file/;95890')
     wawmodtools.description()
 
+elif args.desc_arg_mod == 'cmodern_weapons':
+    cmodern_weapons = CModernweapons('Combat Moduler Weapons', 'http://www.gamewatcher.com', 'http://www.gamewatcher.com/mods/call-of-duty-world-at-war-mod/nazi-zombie-special-combat-modern-weapons-mod-1-0')
+    cmodern_weapons.description()
+
 ## Themes ###########################################################################
 
 if args.arg_theme == 'default':
@@ -497,3 +525,7 @@ elif args.arg_theme == 'christmas_warehouse_theme':
 elif args.arg_theme == 'xbox_theme':
     xbox_theme = Xboxtheme('Xbox 360 Theme', 'Xbox 360 Color Scheme', 'Grey', 'Xbox Font')
     xbox_theme.set_theme()
+
+elif args.arg_theme == 'playstation_theme':
+    playstation_theme = Playstationtheme('Playstation Theme', 'Playstation Color Scheme', 'Blue', 'Playstation Font')
+    playstation_theme.set_theme()

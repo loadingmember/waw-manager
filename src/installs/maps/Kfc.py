@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import *
 from slack.Slack import Slack
 
+
 class Kfc(WawMaps):
 
     def install(self, output=None):
