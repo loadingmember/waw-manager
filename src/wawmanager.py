@@ -7,7 +7,7 @@ import tkinter as tk
 import sys, os
 from Status import Status
 from List import List
-from Keygenerator import Keygenerator
+from KeyGenerator import KeyGenerator
 from installs.Themes.Default import Default
 from installs.Themes.Cheesecubetheme import Cheesecubetheme
 from installs.Themes.Steamtheme import Steamtheme
@@ -51,7 +51,7 @@ parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='u
 parser.add_argument('-ui', help='Opens User Interface', action='store_true', dest='open_ui', required=False)
 parser.add_argument('-theme', help='Changes Theme', action='store', dest='arg_theme', required=False)
 parser.add_argument('-reset', help='Resets all settings and uninstalls all maps', action='store_true', dest='reset', required=False)
-parser.add_argument('-key', help='blah', action='store_true', dest='key', required=False)
+parser.add_argument('-key', help='Generate Random Key', action='store_true', dest='key', required=False)
 
 args = parser.parse_args()
 
@@ -65,8 +65,8 @@ if args.open_ui:
 ## Key Generator
 
 if args.key:
-    key = Keygenerator()
-    key.gen_key()
+    key = KeyGenerator()
+    print(key.generate())
 
 ## Reset Command
 
