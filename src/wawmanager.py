@@ -408,6 +408,7 @@ elif args.arg_mod == 'zombie_bridge1.6':
 elif args.arg_mod == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.uninstall()
+
 ## Map Descriptions ###################################################################################################################################
 
 if args.desc_arg_mod == 'cheese_cube':
@@ -486,7 +487,7 @@ elif args.desc_arg_mod == 'zombie_bridge':
     zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
     zombie_bridge.description()
 
-elif args.arg_mod == 'nuketown_winter':
+elif args.desc_arg_mod == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.description()
 
