@@ -36,6 +36,7 @@ from installs.maps.Familyguy import Familyguy
 from installs.maps.Christmaswarehouse import Christmaswarehouse
 from installs.maps.Zombiebridge import Zombiebridge
 from installs.maps.Nuketownwinter import Nuketownwinter
+from installs.maps.Domesnow import Domesnow
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -284,6 +285,10 @@ elif args.arg_mod == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.install()
 
+elif args.arg_mod == 'dome_snow1.1':
+    dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
+    dome_snow.install()
+
 ## Theme Installs ###################################################################################################################################
 
     ## Cheese Cube Theme Install
@@ -393,21 +398,25 @@ elif args.remove_mod_name == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
     dead_ship.uninstall()
 
-elif args.arg_mod == 'family_guy_zombies':
+elif args.remove_mod_name == 'family_guy_zombies':
     family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
     family_guy.uninstall()
 
-elif args.arg_mod == 'christmas_warehouse':
+elif args.remove_mod_name == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.uninstall()
 
-elif args.arg_mod == 'zombie_bridge1.6':
+elif args.remove_mod_name == 'zombie_bridge1.6':
     zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
     zombie_bridge.uninstall()
 
-elif args.arg_mod == 'nuketown_winter':
+elif args.remove_mod_name == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.uninstall()
+
+elif args.remove_mod_name == 'dome_snow1.1':
+    dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
+    dome_snow.uninstall()
 
 ## Map Descriptions ###################################################################################################################################
 
@@ -490,6 +499,10 @@ elif args.desc_arg_mod == 'zombie_bridge':
 elif args.desc_arg_mod == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.description()
+
+elif args.desc_arg_mod == 'dome_snow1.1':
+    dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
+    dome_snow.description()
 
 ## Mod Descriptions ##############################################################################################
 
