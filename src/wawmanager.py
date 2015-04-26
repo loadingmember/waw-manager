@@ -8,6 +8,7 @@ import sys, os
 from Status import Status
 from List import List
 from Keygenerator import Keygenerator
+from Upgrade import Upgrade
 from installs.Themes.Default import Default
 from installs.Themes.Cheesecubetheme import Cheesecubetheme
 from installs.Themes.Steamtheme import Steamtheme
@@ -30,13 +31,16 @@ from installs.maps.BikiniBottom import BikiniBottom
 from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Detained import Detained
 from installs.maps.Ubahn import Ubahn
-from installs.maps.Annihilation import Annihilation
+# from installs.maps.Annihilation import Annihilation
 from installs.maps.Deadship import Deadship
 from installs.maps.Familyguy import Familyguy
 from installs.maps.Christmaswarehouse import Christmaswarehouse
 from installs.maps.Zombiebridge import Zombiebridge
 from installs.maps.Nuketownwinter import Nuketownwinter
 from installs.maps.Domesnow import Domesnow
+from installs.maps.DiscoveryIsland import DiscoveryIsland
+from installs.maps.Fivehoursofblood import Fivehoursofblood
+from installs.maps.zombie_minecraft import zombie_minecraft
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -49,7 +53,7 @@ parser = argparse.ArgumentParser(description='World at War Mod Manager 1.5')
 parser.add_argument('-version', help='print(Version', action='version', version='WaW Mod Manager Version 1.3')
 parser.add_argument('-install', help='Install new map', action='store', dest='arg_mod', required=False)
 parser.add_argument('-desc', help='Shows Description of Specified Map or Mod', action='store', dest='desc_arg_mod', required=False)
-parser.add_argument('-removemap', help='Uninstall map', action='store', dest='remove_mod_name', required=False)
+parser.add_argument('-purge', help='Uninstall map', action='store', dest='remove_mod_name', required=False)
 parser.add_argument('-status', help='Displays the WaW Status', action='store_true', dest='status', required=False)
 parser.add_argument('-list', help='Show a List of Installable Maps and Mods', action='store_true', dest='list', required=False)
 parser.add_argument('-addmap', help='Adds a map or mod', action='store', dest='user_map_name', required=False)
@@ -57,7 +61,8 @@ parser.add_argument('-ui', help='Opens User Interface', action='store_true', des
 parser.add_argument('-theme', help='Changes Theme', action='store', dest='arg_theme', required=False)
 parser.add_argument('-reset', help='Resets all settings and uninstalls all maps', action='store_true', dest='reset', required=False)
 parser.add_argument('-key', help='Generate Random Key', action='store_true', dest='key', required=False)
-
+parser.add_argument('-launch', help='Launches Call of Duty World at War Client', action='store_true', dest='launch', required=False)
+parser.add_argument('-upgrade', help='Upgrades you to the latest version of wawmanager', action='store_true', dest='upgrade', required=False)
 args = parser.parse_args()
 
 if args.open_ui:
@@ -66,6 +71,14 @@ if args.open_ui:
     # root.tk.call('wm', 'iconphoto', root._w, img)
     app = WawManagerApplication(master=root)
     app.mainloop()
+
+if args.launch:
+    launch = Launchwaw()
+    launch.launch()
+
+if args.upgrade:
+    upgrade = Upgrade()
+    upgrade.upgrade()
 
 ## Key Generator
 
@@ -179,41 +192,50 @@ elif args.arg_mod == 'cmodern_weapons':
 
 ## Map Installs Below
 
+installed = False
+
 
 ## Zombie Cargo
+
 if args.arg_mod == 'zombie_cargo':
     zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')
     zombie_cargo.install()
+    installed = True
 
 ## Zombie Slums
 
 elif args.arg_mod == 'zombie_slums':
     zombie_slums = ZombieSlums('Zombie Slums', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1661')
     zombie_slums.install()
+    installed = True
 
 ## TMG Christmas 1.1
 
 elif args.arg_mod == 'tmg_christmas1.1':
     tmg_christmas = TMGChristmas('TMG Christmas 1.1', 'http://www.zommods.com', 'http://zommods.com/tmg-christmas/')
     tmg_christmas.install()
+    installed = True
 
 ## Purple Dimension
 
 elif args.arg_mod == 'purple_dimension':
     purple_dimension = PurpleDimension('Purple Dimension', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1771')
     purple_dimension.install()
+    installed = True
 
 ## survivedabox
 
 elif args.arg_mod == 'survivedabox':
     survivedabox = Survivedabox('survivedabox', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1819')
     survivedabox.install()
+    installed = True
 
 ## Cryogenic 
 
 elif args.arg_mod == 'cryogenic':
     cryogenic = Cryogenic('Cryogenic', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5860.0')
     cryogenic.install()
+    installed = True
 
 ## One Window Challange
 
@@ -221,11 +243,15 @@ elif args.arg_mod == 'one_window_challange':
     one_window = OneWindow('One Window Challange', 'http://www.zommods.com/', 'http://www.zommods.com/zm_one-window-challenge/')
     one_window.install()
 
+    installed = True
+
 ## Project Viking
 
 elif args.arg_mod == 'project_viking':
     project_viking = ProjectViking('Project Viking Beta 1.0.2', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=1620.0')
     project_viking.install()
+
+    installed = True
 
 ## KFC
 
@@ -233,11 +259,15 @@ elif args.arg_mod == 'kfc':
     kfc = Kfc('Zombie KFC', 'http://www.zombiemodding.com/', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1837')
     kfc.install()
 
+    installed = True
+
 ## Cheese Cube Unlimited 
 
 elif args.arg_mod == 'cheese_cube_unlimited':
     cheese_cube_unlimited = CheeseCubeUnlimited('Cheese Cube Unlimited by ZK', 'http://www.ugx-mods.com/', 'http://ugx-mods.com/forum/index.php?topic=2973.0')
     cheese_cube_unlimited.install()
+
+    installed = True
 
 ## Cheese Cube Standard
 
@@ -245,49 +275,85 @@ elif args.arg_mod == 'cheese_cube':
     cheese_cube = CheeseCube('Cheese Cube by ZK', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1390')
     cheese_cube.install()
 
+    installed = True
+
 elif args.arg_mod == 'bikini_bottom':
     bikini_bottom = BikiniBottom('Bikini Bottom Zombies', 'http://www.zommods.com', 'http://zommods.com/bikini-bottom/')
     bikini_bottom.install()
+
+    installed = True
 
 elif args.arg_mod == 'labyrinth':
     labyrinth = Labyrinth('Labyrith 1.2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1747')
     labyrinth.install()
 
+    installed = True
+
 elif args.arg_mod == 'detained':
     detained = Detained('Detained R2', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1294')
     detained.install()
+
+    installed = True
 
 elif args.arg_mod == 'zombie_ubahn':
     ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
     ubahn.install()
 
-elif args.arg_mod == 'annihilation':
-    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-    annihilation.install()
+    installed = True
+
+# elif args.arg_mod == 'annihilation':
+#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+#     annihilation.install()
+
+elif args.arg_mod == 'zombie_discoveryisland':
+    disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
+    disland.install()
+
+    installed = True
 
 elif args.arg_mod == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
     dead_ship.install()
 
+    installed = True
+
 elif args.arg_mod == 'family_guy_zombies':
     family_guy = Familyguy('Family Guy Zombies', 'httP//www.zommods.com', 'http://www.zommods.com/family_guy.html')
     family_guy.install()
+
+    installed = True
 
 elif args.arg_mod == 'christmas_warehouse':
     christmas_warehouse = Christmaswarehouse('Christmas Warehouse', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=4343.0')
     christmas_warehouse.install()
 
+    installed = True
+
 elif args.arg_mod == 'zombie_bridge1.6':
     zombie_bridge = Zombiebridge('Zombie Bridge v1.6', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1600')
     zombie_bridge.install()
+
+    installed = True
 
 elif args.arg_mod == 'nuketown_winter':
     nuketown_winter = Nuketownwinter('Nuketown Winter Edition', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5013.0')
     nuketown_winter.install()
 
+    installed = True
+
 elif args.arg_mod == 'dome_snow1.1':
     dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
     dome_snow.install()
+
+    installed = True
+
+elif args.arg_mod == 'five_hours_blood':
+    five_hours = Fivehoursofblood('Five Hours of Blood', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1796')
+    five_hours.install()
+
+elif args.arg_mod == 'zombie_minecraft':
+    zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
+    zombie_minecraft.install()
 
 ## Theme Installs ###################################################################################################################################
 
@@ -317,6 +383,8 @@ elif args.arg_mod == 'playstation_theme':
 elif args.remove_mod_name == 'zombie_cargo':
    zombie_cargo = ZombieCargo('Zombie Cargo', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=5645.0')
    zombie_cargo.uninstall()
+
+   installed = False
 
 ## Zombie Slums Uninstall
 
@@ -390,9 +458,12 @@ elif args.remove_mod_name == 'zombie_ubahn':
     ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
     ubahn.uninstall()
 
-elif args.remove_mod_name == 'annihilation':
-    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-    annihilation.uninstall()
+# elif args.remove_mod_name == 'annihilation':
+#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+#     annihilation.uninstall()
+elif args.remove_mod_name == 'zombie_discoveryisland':
+    disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
+    disland.uninstall()
 
 elif args.remove_mod_name == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
@@ -417,6 +488,14 @@ elif args.remove_mod_name == 'nuketown_winter':
 elif args.remove_mod_name == 'dome_snow1.1':
     dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
     dome_snow.uninstall()
+
+elif args.remove_mod_name == 'five_hours_blood':
+    five_hours = Fivehoursofblood('Five Hours of Blood', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1796')
+    five_hours.uninstall()
+
+elif args.remove_mod_name == 'zombie_minecraft':
+    zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
+    zombie_minecraft.uninstall()
 
 ## Map Descriptions ###################################################################################################################################
 
@@ -476,9 +555,13 @@ elif args.desc_arg_mod == 'zombie_ubahn':
     ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
     ubahn.description()
 
-elif args.desc_arg_mod == 'annihilation':
-    annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-    annihilation.description()
+# elif args.desc_arg_mod == 'annihilation':
+#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
+#     annihilation.description()
+
+elif args.desc_arg_mod == 'zombie_discoveryisland':
+    disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
+    disland.install()
 
 elif args.desc_arg_mod == 'dead_ship':
     dead_ship = Deadship('Dead Ship', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1734')
@@ -503,6 +586,14 @@ elif args.desc_arg_mod == 'nuketown_winter':
 elif args.desc_arg_mod == 'dome_snow1.1':
     dome_snow = Domesnow('Dome Snow Version 1.1', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/?topic=3914.0')
     dome_snow.description()
+
+elif args.desc_arg_mod ==  'five_hours_blood':
+    five_hours = Fivehoursofblood('Five Hours of Blood', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1796')
+    five_hours.description()
+
+elif args.desc_arg_mod == 'zombie_minecraft':
+    zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
+    zombie_minecraft.description()
 
 ## Mod Descriptions ##############################################################################################
 

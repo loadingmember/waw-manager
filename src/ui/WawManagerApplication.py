@@ -10,7 +10,7 @@ from installs.maps.OneWindow import OneWindow
 from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Kfc import Kfc
 from installs.maps.Detained import Detained
-from installs.maps.Annihilation import Annihilation
+# from installs.maps.Annihilation import Annihilation
 
 class WawManagerApplication(tk.Frame):
     

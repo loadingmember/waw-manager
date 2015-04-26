@@ -4,7 +4,8 @@ from slack.Slack import Slack
 
 class ZombieSlums(WawMaps):
 
-	def install(self, output=None):
+	def install(self, output=None, installed=True):
+		installed = False
 		if output == None:
 			print('mapname = ' + self.mapname)
 			print('homepage = ' + self.homepage)
@@ -18,6 +19,7 @@ class ZombieSlums(WawMaps):
 			print('Setting Weather and Time of Day')
 			time.sleep(2)
 			print('Zombie Slums succesfuly Installed')
+			installed = True
 		else:
 			output.delete(1.0, END)
 			output.insert(INSERT, 'mapname = ' + self.mapname + '\n')
@@ -40,8 +42,9 @@ class ZombieSlums(WawMaps):
 			output.insert(END, 'Zombie Slums Successfuly Installed')
 			output.update_idletasks()
 			Slack.send_message('#coding', 'Map Installed through UI: Zombie Slums')
+			installed = True
 
-	def uninstall(self):
+	def uninstall(self, installed=False):
 		print('Removing Files/Scripts')
 		time.sleep(2)
 		print('Zombie Slums Map Uninstaled with No Errors')
