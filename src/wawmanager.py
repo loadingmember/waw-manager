@@ -15,6 +15,7 @@ from installs.Themes.Steamtheme import Steamtheme
 from installs.Themes.Christmaswarehousetheme import Christmaswarehousetheme
 from installs.Themes.Xboxtheme import Xboxtheme
 from installs.Themes.Playstationtheme import Playstationtheme
+from installs.Themes.KubuntuTheme import KubuntuTheme
 from ui.WawManagerApplication import WawManagerApplication
 from installs.maps.ZombieCargo import ZombieCargo
 from installs.maps.ZombieSlums import ZombieSlums
@@ -31,7 +32,6 @@ from installs.maps.BikiniBottom import BikiniBottom
 from installs.maps.Labyrinth import Labyrinth
 from installs.maps.Detained import Detained
 from installs.maps.Ubahn import Ubahn
-# from installs.maps.Annihilation import Annihilation
 from installs.maps.Deadship import Deadship
 from installs.maps.Familyguy import Familyguy
 from installs.maps.Christmaswarehouse import Christmaswarehouse
@@ -41,6 +41,7 @@ from installs.maps.Domesnow import Domesnow
 from installs.maps.DiscoveryIsland import DiscoveryIsland
 from installs.maps.Fivehoursofblood import Fivehoursofblood
 from installs.maps.zombie_minecraft import zombie_minecraft
+from installs.maps.Lorkeep import Lorkeep
 from installs.mods.Ugx104 import Ugx104
 from installs.mods.WawModtools import WawModtools
 from installs.mods.BlackopsPerks import BlackopsPerks
@@ -301,10 +302,6 @@ elif args.arg_mod == 'zombie_ubahn':
 
     installed = True
 
-# elif args.arg_mod == 'annihilation':
-#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-#     annihilation.install()
-
 elif args.arg_mod == 'zombie_discoveryisland':
     disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
     disland.install()
@@ -355,6 +352,10 @@ elif args.arg_mod == 'zombie_minecraft':
     zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
     zombie_minecraft.install()
 
+elif args.arg_mod == 'zombie_lorkeep':
+    lorkeep = Lorkeep('Zombie Lorkeep', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=2840.0')
+    lorkeep.install()
+
 ## Theme Installs ###################################################################################################################################
 
     ## Cheese Cube Theme Install
@@ -377,6 +378,10 @@ elif args.arg_mod == 'xbox_theme':
 elif args.arg_mod == 'playstation_theme':
     playstation_theme = Playstationtheme('Playstation Theme', 'Playstation Color Scheme', 'Blue', 'Playstation Font')
     playstation_theme.install()
+
+elif args.arg_mod == 'kubuntu_theme':
+    kubuntu = KubuntuTheme('Kubuntu Theme Version 1.0', 'Kubuntu Color Scheme', 'Grey', 'Kubuntu Font')
+    kubuntu.install()
 
 ## Map Removes #########################################################################################################################
 
@@ -458,9 +463,6 @@ elif args.remove_mod_name == 'zombie_ubahn':
     ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
     ubahn.uninstall()
 
-# elif args.remove_mod_name == 'annihilation':
-#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-#     annihilation.uninstall()
 elif args.remove_mod_name == 'zombie_discoveryisland':
     disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
     disland.uninstall()
@@ -496,6 +498,10 @@ elif args.remove_mod_name == 'five_hours_blood':
 elif args.remove_mod_name == 'zombie_minecraft':
     zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
     zombie_minecraft.uninstall()
+
+elif args.remove_mod_name == 'zombie_lorkeep':
+    lorkeep = Lorkeep('Zombie Lorkeep', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=2840.0')
+    lorkeep.uninstall()
 
 ## Map Descriptions ###################################################################################################################################
 
@@ -555,10 +561,6 @@ elif args.desc_arg_mod == 'zombie_ubahn':
     ubahn = Ubahn('Zombie Ubahn', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?topic=17765.0')
     ubahn.description()
 
-# elif args.desc_arg_mod == 'annihilation':
-#     annihilation = annihilation('Annihilation', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1629')
-#     annihilation.description()
-
 elif args.desc_arg_mod == 'zombie_discoveryisland':
     disland = DiscoveryIsland('Discovery Island', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1810')
     disland.install()
@@ -594,6 +596,10 @@ elif args.desc_arg_mod ==  'five_hours_blood':
 elif args.desc_arg_mod == 'zombie_minecraft':
     zombie_minecraft = zombie_minecraft('Zombie Minecraft Version 2.0', 'http://www.zombiemodding.com', 'http://www.zombiemodding.com/index.php?action=downloads;sa=view;down=1509')
     zombie_minecraft.description()
+
+elif args.desc_arg_mod == 'zombie_lorkeep':
+    lorkeep = Lorkeep('Zombie Lorkeep', 'http://www.ugx-mods.com', 'http://ugx-mods.com/forum/index.php?topic=2840.0')
+    lorkeep.description()
 
 ## Mod Descriptions ##############################################################################################
 
@@ -646,3 +652,7 @@ elif args.arg_theme == 'xbox_theme':
 elif args.arg_theme == 'playstation_theme':
     playstation_theme = Playstationtheme('Playstation Theme', 'Playstation Color Scheme', 'Blue', 'Playstation Font')
     playstation_theme.set_theme()
+
+elif args.arg_theme == 'kubuntu_theme':
+    kubuntu = KubuntuTheme('Kubunut Theme', 'Kubuntu Color Scheme', 'Grey', 'Kubuntu Font')
+    kubuntu.set_theme()
